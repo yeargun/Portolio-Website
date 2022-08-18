@@ -6,12 +6,11 @@ const Layout = () => {
     return( 
     <div className="App">
         <SideBar/>
+        <div className="page">
+        <div className="backImage"></div>
+        <Outlet />
         
-            <div className="page">
-            <div className="backImage"></div>
-            <Outlet />
-            
-            </div>
+        </div>
 
     </div>
     )

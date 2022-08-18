@@ -75,7 +75,7 @@ const Contact = () => {
             </form>
           </div>
           <div className="map-wrap">
-            <iframe style={{width:"100%", height:"100%"}} frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
+            <iframe className="map" style={{width:"100%", height:"100%"}} frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
             src="https://maps.google.com/maps?width=683&amp;height=479&amp;hl=en&amp;q=%20Ankara+(Home)&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
             {/* <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5795a55df206629539ca25cd73e030e42df99fd8'></script> */}
           </div>

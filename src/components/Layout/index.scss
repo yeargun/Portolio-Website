@@ -10,7 +10,7 @@
       width: 100%;
       height: 100%;
       background-image: url("../../assets/images/back\ back2.jpg");
-      width: 70%;
+      width: 75%;
 
   /* Center and scale the image nicely */
       background-position: center;
@@ -44,19 +44,18 @@
   .container {
     width: 100%;
     will-change: contents;
-    height: 90%;
     min-height: 566px;
     position: absolute;
-    opacity: 0;
-    top: 5%;
+    top: 0px;
     margin: 0 auto;
-    z-index: 1;
+    z-index: 2;
     transform-style: preserve-3d;
     animation: fadeIn 1s forwards;
     animation-delay: 1s;
   }
   
   .container.contact-page {
+    height: 100%;
     margin: 0 0 0 0;
     h1 {
         font-size: 53px;

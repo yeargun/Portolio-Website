@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 
-import Logo from './Logo'
+
 import './index.scss'
 
 const Home = () => {
@@ -30,11 +30,6 @@ const Home = () => {
     'r'
   ]
 
-  // useEffect(() => {
-  //   return setTimeout(() => {
-  //     setLetterClass('text-animate-hover')
-  //   }, 4000)
-  // }, [])
 
   return (
     <>
@@ -65,7 +60,7 @@ const Home = () => {
             CONTACT ME
           </Link>
         </div>
-        {/* <Logo /> */}
+
       </div>
 
     </>
