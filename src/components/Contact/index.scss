@@ -10,11 +10,17 @@
   max-height: 35%;
   margin-top: 0;
 
+
+
   ul {
+
+
     padding: auto;
     margin: 0;
 
     li {
+
+
       padding: 0;
       margin: 0;
       list-style: none;
@@ -30,6 +36,7 @@
 
     li.half {
       width: 49%;
+      
       margin-left: 2%;
       float: left;
       clear: none;
@@ -54,6 +61,7 @@
   }
 
   textarea {
+
     width: 100%;
     border: 0;
     background: #181818;
@@ -83,11 +91,21 @@
 }
 
 .map-wrap {
-  margin-right: 1%;
-  background: #626262(8, 253, 216, 0.1);
-  float: right;
-  width: 53%;
+  @media screen and (max-width: 768px) {
+    display: none;
+    white-space: nowrap;
+
+  }
+
+  width: 52%;
   height: 100%;
+  position: absolute;
+  left: 47%;
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  
   
 }
 

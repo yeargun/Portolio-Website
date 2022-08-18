@@ -48,13 +48,13 @@ const Home = () => {
             <span className={`${letterClass} _13`}>I</span>
             <span className={`${letterClass} _14`}>'m&nbsp;</span>
 
-            <AnimatedLetters
+            <AnimatedLetters className="nameAnimatedLetters"
               letterClass={letterClass}
               strArray={nameArray}
               idx={15}
             />
             <br />
-            <AnimatedLetters
+            <AnimatedLetters className="jobAnimatedLetters"
               letterClass={letterClass}
               strArray={jobArray}
               idx={22}
