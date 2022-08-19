@@ -3,7 +3,7 @@
   height: 100%;
     .text-zone {
       position: absolute;
-      left: 10%;
+      // left: 10%;
       top: 50%;
       transform: translateY(-50%);
       width: 40%;
@@ -12,13 +12,19 @@
     }
   
     h1 {
+      
       color: #fff;
-      font-size: 4.3vw;
+      font-size: 8vw;
+      @media screen and (min-width: 900px) {
+        font-size: 70px;
+        line-height: normal;
+      }
       // font-size: 500%;
-      line-height: 4.3vw;
+      line-height: normal;
       margin: 0;
       font-family: 'Coolvetica';
       font-weight: 400;
+      letter-spacing: normal;
 
   
       

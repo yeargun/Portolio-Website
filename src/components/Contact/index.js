@@ -34,7 +34,7 @@ const Contact = () => {
             />
           </h1>
           <p>
-            I'm interested in data engineer | full stack web developer positions. Though I'm always up to work at challenging projects with good teammates.
+            I'm interested in data engineer | full stack developer positions. Though I'm always up to work at challenging projects with good teammates.
           </p>
 
         </div>

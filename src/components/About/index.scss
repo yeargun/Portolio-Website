@@ -22,14 +22,14 @@
     position: absolute;
     width: 200px;
     height: 200px;
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgb(248, 207, 207);
+    background: rgba(19, 11, 32, 0.4);
     text-align: center;
-    font-size: 100px;
+    font-size: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px 0px lightyellow;
+    box-shadow: 0 0 20px 0px rgb(236, 224, 255);
   }
 
   .face1 {
@@ -42,11 +42,11 @@
   }
   .face3 {
     transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
-    color: #28a4d9;
+    color: #28d963;
   }
   .face4 {
     transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
-    color: #5ed4f4;
+    color: #28d963;
   }
   .face5 {
     transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
@@ -78,4 +78,10 @@
   83% {
     transform: rotateX(90deg);
   }
+}
+
+
+.text-zone{
+  font-size: 150px!important;
+  position: absolute;
 }
