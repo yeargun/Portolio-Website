@@ -1,26 +1,30 @@
 .contact-form {
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+    
+
+  }
+  .flat-button {
+    @media screen and (max-width: 1200px) {
+      background-color: #181818;
+    }
+  }
+  
   position: absolute;
-  left: 5%;
   bottom:10%;
-  // transform: translateY(-50%);
+  float: left;
   width: 40%;
   height: 100%;
   vertical-align: middle;
   display: table-cell;
-  max-height: 35%;
+  max-height: 40%;
   margin-top: 0;
-
-
+  left: -50px;
 
   ul {
-
-
     padding: auto;
     margin: 0;
-
     li {
-
-
       padding: 0;
       margin: 0;
       list-style: none;
@@ -70,7 +74,7 @@
     color: #fff;
     padding: 20px;
     box-sizing: border-box;
-    min-height: 150px;
+    min-height: 170px;
   }
 
   .flat-button {
@@ -95,10 +99,10 @@
     display: none;
 
   }
-  width: 52%;
+  width: 57%;
   height: 100%;
   position: absolute;
-  left: 48%;
+  left: 43%;
 
   top: 50%;
   -ms-transform: translateY(-50%);
@@ -107,9 +111,23 @@
   
 }
 
+.text-zone {
+  @media screen and (max-width: 1200px) {
+    width: 60%;
+    
 
-.info-map{
-  color: #fff;
-  font-weight: 500;
-  font-size: large;
+  }
+  position: absolute;
+  // left: 8%;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 40%;
+  vertical-align: middle;
+  display: table-cell;
+  max-height: 90%;
+}
+.text-animate-hover {
+  &:hover {
+    color: #fff;
+  }
 }

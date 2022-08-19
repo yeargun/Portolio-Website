@@ -56,7 +56,7 @@
   
   .container.contact-page {
     height: 100%;
-    margin: 0 0 0 0;
+    left: 105px;
     h1 {
         font-size: 53px;
         font-family: 'Coolvetica';
@@ -68,7 +68,7 @@
         left: -10px;
     }
     p {
-        font-size: 13px;
+        font-size: 14px;
         color: #fff;
         font-family: sans-serif;
         font-weight: 300;
@@ -84,21 +84,7 @@
           animation-delay: 1.3s;
         }
       }
-      .text-zone {
-        position: absolute;
-        left: 8%;
-        top: 35%;
-        transform: translateY(-50%);
-        width: 35%;
-        vertical-align: middle;
-        display: table-cell;
-        max-height: 90%;
-      }
-      .text-animate-hover {
-        &:hover {
-          color: #fff;
-        }
-      }
+      
       
   }
 
