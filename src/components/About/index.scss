@@ -1,12 +1,12 @@
 .stage-cube-cont {
-  width: 50%;
+  // width: 50%;
   height: 100%;
-  top: 0;
-  padding-top: 18%;
-  margin-left: 0;
+  left: 70%;
+  top: 40%;
+  // padding-top: 15%;
+  // margin-left: 0;
   position: absolute;
-  right: 0;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .cubespinner {
@@ -22,13 +22,13 @@
     position: absolute;
     width: 200px;
     height: 200px;
-    border: 1px solid rgb(248, 207, 207);
-    background: rgba(19, 11, 32, 0.4);
+    // border: 1px solid rgb(248, 207, 207);
+    background: rgba(26, 20, 35, 0.4);
     text-align: center;
     font-size: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     box-shadow: 0 0 20px 0px rgb(236, 224, 255);
   }
 
@@ -80,8 +80,7 @@
   }
 }
 
-
-.text-zone{
-  font-size: 150px!important;
+.text-zone {
+  font-size: 150px !important;
   position: absolute;
 }

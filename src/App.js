@@ -1,13 +1,12 @@
-import Layout from './components/Layout';
-import './App.scss';
-import { Routes, Route} from 'react-router-dom';
-import Home from "./components/Home"
-import About from "./components/About"
-import Contact from "./components/Contact"
-import Portfolio from "./components/Portfolio"
+import Layout from './components/Layout'
+import './App.scss'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import Portfolio from './components/Portfolio'
+import DinoGame from './components/DinoGame'
 // import Dashboard from "./components/Dashboard"
-
-
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
         </Route>
       </Routes>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

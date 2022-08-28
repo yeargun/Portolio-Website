@@ -1,12 +1,46 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
+// import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-
 
 import './index.scss'
 
 const Home = () => {
+  // const dino = document.getElementById('dino')
+  // const cactus = document.getElementById('cactus')
+
+  // function jump() {
+  //   if (dino.classList != 'jump') {
+  //     dino.classList.add('jump')
+
+  //     setTimeout(function () {
+  //       dino.classList.remove('jump')
+  //     }, 300)
+  //   }
+  // }
+
+  // let isAlive = setInterval(function () {
+  //   // get current dino Y position
+  //   let dinoTop = parseInt(
+  //     window.getComputedStyle(dino).getPropertyValue('top')
+  //   )
+
+  //   // get current cactus X position
+  //   let cactusLeft = parseInt(
+  //     window.getComputedStyle(cactus).getPropertyValue('left')
+  //   )
+
+  //   // detect collision
+  //   if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
+  //     // collision
+  //     alert('Game Over!')
+  //   }
+  // }, 10)
+
+  // document.addEventListener('keydown', function (event) {
+  //   console.log('jump')
+  //   jump()
+  // })
   const [letterClass, setLetterClass] = useState('text-animate')
 
   const nameArray = ['y', 'e', 'a', 'r', 'g', 'u', 'n']
@@ -27,14 +61,12 @@ const Home = () => {
     'n',
     'e',
     'e',
-    'r'
+    'r',
   ]
-
 
   return (
     <>
       <div className="container home-page">
-      
         <div className="text-zone">
           <h1>
             <span className={letterClass}>H</span>
@@ -43,13 +75,15 @@ const Home = () => {
             <span className={`${letterClass} _13`}>I</span>
             <span className={`${letterClass} _14`}>'m&nbsp;</span>
 
-            <AnimatedLetters className="nameAnimatedLetters"
+            <AnimatedLetters
+              className="nameAnimatedLetters"
               letterClass={letterClass}
               strArray={nameArray}
               idx={15}
             />
             <br />
-            <AnimatedLetters className="jobAnimatedLetters"
+            <AnimatedLetters
+              className="jobAnimatedLetters"
               letterClass={letterClass}
               strArray={jobArray}
               idx={22}
@@ -60,9 +94,11 @@ const Home = () => {
             CONTACT ME
           </Link>
         </div>
-
+        {/* <div className="game">
+          <div id="dino"></div>
+          <div id="cactus"></div>
+        </div> */}
       </div>
-
     </>
   )
 }
