@@ -1,68 +1,33 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link } from "react-router-dom";
 // import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
+import AnimatedLetters from "../AnimatedLetters";
 
-import './index.scss'
+import "./index.scss";
 
 const Home = () => {
-  // const dino = document.getElementById('dino')
-  // const cactus = document.getElementById('cactus')
+  const [letterClass, setLetterClass] = useState("text-animate");
 
-  // function jump() {
-  //   if (dino.classList != 'jump') {
-  //     dino.classList.add('jump')
-
-  //     setTimeout(function () {
-  //       dino.classList.remove('jump')
-  //     }, 300)
-  //   }
-  // }
-
-  // let isAlive = setInterval(function () {
-  //   // get current dino Y position
-  //   let dinoTop = parseInt(
-  //     window.getComputedStyle(dino).getPropertyValue('top')
-  //   )
-
-  //   // get current cactus X position
-  //   let cactusLeft = parseInt(
-  //     window.getComputedStyle(cactus).getPropertyValue('left')
-  //   )
-
-  //   // detect collision
-  //   if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
-  //     // collision
-  //     alert('Game Over!')
-  //   }
-  // }, 10)
-
-  // document.addEventListener('keydown', function (event) {
-  //   console.log('jump')
-  //   jump()
-  // })
-  const [letterClass, setLetterClass] = useState('text-animate')
-
-  const nameArray = ['y', 'e', 'a', 'r', 'g', 'u', 'n']
+  const nameArray = ["y", "e", "a", "r", "g", "u", "n"];
   const jobArray = [
-    's',
-    'o',
-    'f',
-    't',
-    'w',
-    'a',
-    'r',
-    'e',
-    ' ',
-    'e',
-    'n',
-    'g',
-    'i',
-    'n',
-    'e',
-    'e',
-    'r',
-  ]
+    "s",
+    "o",
+    "f",
+    "t",
+    "w",
+    "a",
+    "r",
+    "e",
+    " ",
+    "e",
+    "n",
+    "g",
+    "i",
+    "n",
+    "e",
+    "e",
+    "r",
+  ];
 
   return (
     <>
@@ -89,18 +54,14 @@ const Home = () => {
               idx={22}
             />
           </h1>
-          <h2>Data Engineer | Full Stack Developer </h2>
+          <h2>React | Node.js | Spring Boot</h2>
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
         </div>
-        {/* <div className="game">
-          <div id="dino"></div>
-          <div id="cactus"></div>
-        </div> */}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

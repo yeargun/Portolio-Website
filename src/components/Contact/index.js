@@ -1,29 +1,29 @@
-import AnimatedLetters from '../AnimatedLetters'
-import './index.scss'
-import { useState, useRef } from 'react'
-import emailjs from '@emailjs/browser'
+import AnimatedLetters from "../AnimatedLetters";
+import "./index.scss";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-  const refForm = useRef()
+  const [letterClass, setLetterClass] = useState("text-animate");
+  const refForm = useRef();
 
   const sendEmail = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     emailjs
       .sendForm(
-        'service_z1zuf8w',
-        'template_tgmzj9h',
+        "service_z1zuf8w",
+        "template_tgmzj9h",
         refForm.current,
-        'HhZhZe-TEl0fItohh'
+        "HhZhZe-TEl0fItohh"
       )
       .then(() => {
-        alert('Message sent successfully')
+        alert("Message sent successfully");
       })
       .catch((err) => {
-        alert('Failed to send message')
-        console.log(err)
-      })
-  }
+        alert("Failed to send message");
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -32,14 +32,14 @@ const Contact = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+              strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
               idx={15}
             />
           </h1>
           <p>
-            I'm interested in data engineer | full stack developer positions.
-            Though I'm always up to work at challenging projects with good
-            teammates.
+            Interested in working with funny people. As of now, I'm more focused
+            on backend, system design and cloud native applications but at the
+            end of the day I'm interested in solving problems.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ const Contact = () => {
         <div className="map-wrap">
           <iframe
             className="map"
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: "100%", height: "100%" }}
             frameborder="0"
             scrolling="no"
             marginheight="0"
@@ -84,11 +84,10 @@ const Contact = () => {
             id="gmap_canvas"
             src="https://maps.google.com/maps?width=683&amp;height=479&amp;hl=en&amp;q=%20Ankara+(Home)&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           ></iframe>
-          {/* <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5795a55df206629539ca25cd73e030e42df99fd8'></script> */}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import {
   faPython,
   faJava,
@@ -6,14 +6,14 @@ import {
   faNodeJs,
   faJsSquare,
   faReact,
-} from '@fortawesome/free-brands-svg-icons'
-import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './index.scss'
+} from "@fortawesome/free-brands-svg-icons";
+import Loader from "react-loaders";
+import AnimatedLetters from "../AnimatedLetters";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./index.scss";
 
 const About = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterClass, setLetterClass] = useState("text-animate");
 
   // useEffect(() => {
   //   return setTimeout(() => {
@@ -28,18 +28,18 @@ const About = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
+              strArray={["A", "b", "o", "u", "t", " ", "m", "e"]}
               idx={15}
             />
           </h1>
+          <p>I like to get things done.</p>
           <p>
-            I like to get things done.
-          </p>
-          <p >
-            Chill and confident person. I enjoy spending time with my friends and family.
+            Chill and confident person. I enjoy spending time with my friends
+            and family.
           </p>
           <p>
-            I like gym, ski, friends, coffee, humuor, sometimes I do nerd sh*t. 
+            I like gym, ski, coffee, humuor, sometimes I do nerd sh*t. I am
+            quite an interesting personality in that sense.
           </p>
         </div>
 
@@ -66,9 +66,8 @@ const About = () => {
           </div>
         </div>
       </div>
-
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;
