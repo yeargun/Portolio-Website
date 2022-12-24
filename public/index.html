@@ -8,7 +8,7 @@
     <meta name="yeargun's portfolio webpage" content="insane content" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>{.map((element) =>{ })}under construction</title>
+    <title>under construction</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -19,17 +19,12 @@
     ></script>
     <script type="text/javascript">
       (function () {
-        // https://dashboard.emailjs.com/admin/account
         emailjs.init("HhZhZe-TEl0fItohh");
       })();
       (function () {
         let timer = 0;
         let titles = [
           "under construction",
-          "I",
-          "SAID",
-          "UNDER",
-          "CONSTRUCTION",
           "😴",
           "😴😴",
           "😴😴",
@@ -44,8 +39,6 @@
           setTimeout(() => {
             document.title = titles[i % titles.length];
           }, timer);
-          if (i == 0) timer += 12000;
-
           timer += 700;
         }
       })();

@@ -1,8 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./index.scss";
 
 const Portfolio = () => {
-  return <>sdfsagg</>;
+  return (
+    <div className="pdfWrap">
+      <object
+        className="pdf"
+        data="/assets/Ali Argun Sayılgan CV.pdf"
+        width="780em"
+        height="990em"
+      ></object>
+    </div>
+  );
 };
 
 export default Portfolio;
