@@ -1,0 +1,56 @@
+.postTitleWrapper {
+  display: flex;
+  // width: 100%;
+  justify-content: space-between;
+}
+
+.postTitle {
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 77%;
+
+  word-wrap: break-word;
+  word-break: break-all;
+  text-align: center;
+}
+
+.postLastUpdated {
+  right: 5px;
+  max-width: 30%;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+a {
+  font-size: 1.3em;
+}
+
+a:link {
+  color: black;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: grey;
+  text-decoration: underline;
+}
+
+a:hover {
+  font-weight: 600;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  margin-top: 7em;
+}
+
+ul li {
+  margin-bottom: 1em;
+}

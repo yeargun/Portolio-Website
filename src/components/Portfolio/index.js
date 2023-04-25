@@ -28,10 +28,10 @@ const Portfolio = () => {
             height={window.innerHeight * 0.95}
             src={adr}
             title="wiki"
-            frameborder="0"
-            allowfullscreen
+            frameBorder="0"
+            allowFullScreen
           ></iframe>
-          <p className="text">IN CASE YOU ARE INTERESTED</p>
+          <p className="text nonSelectable">IN CASE YOU ARE INTERESTED</p>
         </>
       ) : (
         ""

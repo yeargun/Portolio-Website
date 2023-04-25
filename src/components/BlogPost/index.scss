@@ -1,0 +1,48 @@
+.blogPage {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  * {
+    // width: auto;
+    padding: 0 11% 0 11%;
+  }
+  overflow: auto;
+}
+
+.blogTitle {
+  text-align: center;
+  padding: 0 20% 0% 20%;
+
+  margin: 1.5% 0 0 0;
+}
+
+.extraInfo {
+  display: flex;
+  justify-content: space-between;
+
+  h4 {
+    margin: 1em 0em 0em 0em;
+  }
+}
+
+.lastUpdate {
+  text-align: end;
+}
+
+hr {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.paragraph {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: large;
+}
+
+.backArrow {
+  position: absolute;
+  margin-top: 1.5%;
+}

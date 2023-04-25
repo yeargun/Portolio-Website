@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AnimatedLetters from "../AnimatedLetters";
 
 import "./index.scss";
+import SideBlog from "../SideBlog";
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -29,10 +30,10 @@ const Home = () => {
   ];
 
   return (
-    <>
+    <div>
       <div className="container home-page">
         <div className="text-zone">
-          <h1>
+          <h1 className="nonSelectable">
             <span className={letterClass}>H</span>
             <span className={`${letterClass} _12`}>i,</span>
             <br />
@@ -53,13 +54,13 @@ const Home = () => {
               idx={22}
             />
           </h1>
-          <h2>React | Node.js | Spring Boot</h2>
+          <h2 className="nonSelectable">Spring Boot | Next.js | Node.js</h2>
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

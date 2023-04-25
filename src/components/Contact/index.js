@@ -29,17 +29,17 @@ const Contact = () => {
     <>
       <div className="container contact-page">
         <div className="text-zone">
-          <h1>
+          <h1 className="nonSelectable">
             <AnimatedLetters
               letterClass={letterClass}
               strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
               idx={15}
             />
           </h1>
-          <p>
-            Interested in working with funny people. As of now, I'm more focused
-            on backend, system design and cloud native applications but at the
-            end of the day I'm interested in solving problems.
+          <p className="nonSelectable">
+            As of now, I'm more focused on backend, system design and cloud
+            native applications but at the end of the day I'm interested in
+            solving problems.
           </p>
         </div>
 
@@ -77,10 +77,10 @@ const Contact = () => {
           <iframe
             className="map"
             style={{ width: "100%", height: "100%" }}
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
+            marginHeight="0"
+            marginWidth="0"
             id="gmap_canvas"
             src="https://maps.google.com/maps?width=683&amp;height=479&amp;hl=en&amp;q=%20Ankara+(Home)&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           ></iframe>

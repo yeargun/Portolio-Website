@@ -28,10 +28,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "linbuild": "GENERATE_SOURCEMAP=false react-scripts build",
+    "winbuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "build-localhost": "GENERATE_SOURCEMAP=false PUBLIC_URL=/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": ".",
   "browserslist": {
     "production": [
       ">0.2%",
