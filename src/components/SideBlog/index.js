@@ -19,7 +19,14 @@ const SideBlog = () => {
         </li>
         <li className="postTitleWrapper">
           <a className="postTitle" href="/shut">
-            Why I have no friends (as a SWE)
+            Opinions on travelling alone
+          </a>
+
+          <p className="postLastUpdated">04.04.2023</p>
+        </li>
+        <li className="postTitleWrapper">
+          <a className="postTitle" href="/shut">
+            Why I'm not using Pelican
           </a>
 
           <p className="postLastUpdated">04.04.2023</p>

@@ -2,8 +2,21 @@ import { useNavigate } from "react-router-dom";
 
 import "./index.scss";
 
+const disqus_config = () => {
+  this.page.url = "https://yeargun.dev/shut"
+  this.page.identifier = new Date().getTime();
+}
+
 const BlogPost = () => {
   const navigate = useNavigate();
+  
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://yeargun.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+
 
   return (
     <div className="blogPage">
@@ -14,7 +27,7 @@ const BlogPost = () => {
         height="32em"
         onClick={() => navigate(-1)}
       />
-      <h1 className="blogTitle">Why I have no friends (as a Junior SWE)</h1>
+      <h1 className="blogTitle">Why I have no friends (as a SWE)</h1>
       <div className="extraInfo">
         <h4 className="estimatedTime">4 mins</h4>
         <h4 className="lastUpdate">Last update: 03.04.2023</h4>
@@ -45,6 +58,9 @@ const BlogPost = () => {
         </a>{" "}
         is meme. the tech lead is something of a cool person himself.
       </p>
+      <div id="disqus_thread"></div>
+
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
   );
 };
