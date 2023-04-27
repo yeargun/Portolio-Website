@@ -1,22 +1,36 @@
 import { useNavigate } from "react-router-dom";
-
 import "./index.scss";
+import { useLayoutEffect } from "react";
+import { useState } from "react";
+import { marked } from "marked";
 
 const disqus_config = () => {
-  this.page.url = "https://yeargun.dev/shut"
+  this.page.url = "https://yeargun.dev/shut";
   this.page.identifier = new Date().getTime();
-}
+};
 
 const BlogPost = () => {
   const navigate = useNavigate();
-  
-  (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://yeargun.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+  const [md, setMd] = useState("<div></div>");
 
+  //this fetch makes me very mad. Bad design but yeah whatever
+  useLayoutEffect(() => {
+    fetch("/blogPosts/test0.md")
+      .then((res) => res.text())
+      .then((text) => {
+        setMd(marked(text));
+      });
+
+    fetch("/blogPosts/").then((res) => console.log("@", res.text()));
+  });
+
+  (function () {
+    var d = document,
+      s = d.createElement("script");
+    s.src = "https://yeargun.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
 
   return (
     <div className="blogPage">
@@ -33,7 +47,11 @@ const BlogPost = () => {
         <h4 className="lastUpdate">Last update: 03.04.2023</h4>
       </div>
       <hr />
-      <p className="paragraph">
+      <div
+        className="blogPostContent"
+        dangerouslySetInnerHTML={{ __html: md }}
+      ></div>
+      {/* <p className="paragraph">
         Lorem ipsum Both options have their advantages and disadvantages, and
         the choice ultimately depends on the specific requirements of your
         database. Using triggers to automatically increment primary key fields
@@ -57,10 +75,15 @@ const BlogPost = () => {
           https://youtu.be/BRzFjuranQU
         </a>{" "}
         is meme. the tech lead is something of a cool person himself.
-      </p>
-      <div id="disqus_thread"></div>
+      </p> */}
+      <div id="disqus_thread" className="disqusThing"></div>
 
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <noscript>
+        Please enable JavaScript to view the{" "}
+        <a href="https://disqus.com/?ref_noscript">
+          comments powered by Disqus.
+        </a>
+      </noscript>
     </div>
   );
 };
