@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import AnimatedLetters from "../AnimatedLetters";
 
 import "./index.scss";
-import SideBlog from "../SideBlog";
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState("text-animate");

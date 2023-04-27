@@ -1,36 +1,39 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./index.scss";
 
 const SideBlog = () => {
-  const [xd, setXd] = useState("");
+  const [fileData, setFileData] = useState([]);
+
+  useLayoutEffect(() => {
+    fetch("/blogPosts/metaD.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        setFileData(text.split("\n"));
+      });
+  }, []);
 
   return (
     <div className="blogWrapper">
-      {/* <h1 style={{ color: "black", userSelect: "none" }}>blog</h1> */}
       <ul>
-        <li className="postTitleWrapper">
-          <a className="postTitle" href="/shut">
-            why have I made this static site with react
-          </a>
+        {fileData.map((val, ind) => {
+          if (val) {
+            let date = val.substring(0, 11);
+            let url = "/shut/" + date.replace(/\./g, "");
+            let name = val.substring(11);
 
-          <p className="postLastUpdated">03.04.2023</p>
-        </li>
-        <li className="postTitleWrapper">
-          <a className="postTitle" href="/shut">
-            Opinions on travelling alone
-          </a>
+            return (
+              <li id={ind} className="postTitleWrapper">
+                <a className="postTitle" href={url}>
+                  {name}
+                </a>
 
-          <p className="postLastUpdated">04.04.2023</p>
-        </li>
-        <li className="postTitleWrapper">
-          <a className="postTitle" href="/shut">
-            Why I'm not using Pelican
-          </a>
-
-          <p className="postLastUpdated">04.04.2023</p>
-        </li>
+                <p className="postLastUpdated">{date}</p>
+              </li>
+            );
+          }
+        })}
       </ul>
     </div>
   );

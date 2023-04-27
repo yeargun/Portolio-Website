@@ -1,0 +1,2 @@
+25.04.2023 Why have I made this static site with react
+27.04.2023 Why I'm not using Pelican or some Jamstack thing
