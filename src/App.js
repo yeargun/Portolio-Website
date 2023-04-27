@@ -7,7 +7,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import LayoutWithBlog from "./components/LayoutWithBlog";
-const BlogPost = lazy(() => import("./components/BlogPost"));
+// const BlogPost = lazy(() => import("./components/BlogPost"));
+import BlogPost from "./components/BlogPost";
 
 function App() {
   return (
