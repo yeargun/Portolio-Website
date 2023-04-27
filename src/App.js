@@ -1,6 +1,6 @@
 import Layout from "./components/Layout";
 import "./App.scss";
-import { Routes, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -21,8 +21,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Portfolio />} />
             <Route path="/shut/*" element={<BlogPost />} />
+            <Route path="*" element={<Portfolio />} />
           </Route>
         </Routes>
       </Suspense>
