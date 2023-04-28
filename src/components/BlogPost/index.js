@@ -4,6 +4,7 @@ import { useLayoutEffect } from "react";
 import { useState } from "react";
 import { marked } from "marked";
 
+debugger;
 const blogPostId = window.location.pathname.split("/")[2];
 const disqus_config = () => {
   this.page.url = window.location.pathname;
