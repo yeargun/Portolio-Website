@@ -10,7 +10,7 @@ const disqus_config = () => {
   this.page.url = window.location.pathname;
   this.page.identifier = blogPostId;
 };
-const fetchUrl = "/blogPosts/" + blogPostId;
+const fetchUrl = "/blogPosts/" + blogPostId + ".md";
 const update =
   blogPostId?.substring(0, 2) +
   "." +

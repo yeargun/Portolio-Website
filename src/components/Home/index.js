@@ -5,7 +5,7 @@ import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState("text-animate");
+  const letterClass = "text-animate";
 
   const nameArray = ["y", "e", "a", "r", "g", "u", "n"];
   const jobArray = [

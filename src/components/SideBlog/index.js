@@ -15,7 +15,7 @@ const SideBlog = () => {
   }, []);
 
   return (
-    <div className="blogWrapper">
+    <div className="sideBlogWrapper">
       <ul>
         {fileData.map((val, ind) => {
           if (val) {

@@ -23,13 +23,13 @@
   }
 }
 
-.lastUpdate {
-  text-align: end;
-}
-
-hr {
+.extraInfo + hr {
   width: 58%;
   margin: 0 auto;
+}
+
+.lastUpdate {
+  text-align: end;
 }
 
 .backArrow {
@@ -52,4 +52,5 @@ hr {
   margin-top: 50px;
   padding: 0 21.5% 0 21.5%;
   font-size: large;
+  width: auto;
 }

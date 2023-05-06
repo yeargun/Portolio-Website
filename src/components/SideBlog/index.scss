@@ -17,38 +17,40 @@
 
 .postLastUpdated {
   right: 5px;
-  max-width: 30%;
+  width: 30%;
   display: flex;
   align-items: center;
   user-select: none;
 }
 
-a {
-  font-size: 1.3em;
-}
+.sideBlogWrapper {
+  a {
+    font-size: 1.3em;
+  }
 
-a:link {
-  color: black;
-  text-decoration: underline;
-}
+  a:link {
+    color: black;
+    text-decoration: underline;
+  }
 
-a:visited {
-  color: grey;
-  text-decoration: underline;
-}
+  a:visited {
+    color: grey;
+    text-decoration: underline;
+  }
 
-a:hover {
-  font-weight: 600;
-}
+  a:hover {
+    font-weight: 600;
+  }
 
-a:active {
-  text-decoration: none;
-}
+  a:active {
+    text-decoration: none;
+  }
 
-ul {
-  margin-top: 7em;
-}
+  ul {
+    margin-top: 7em;
+  }
 
-ul li {
-  margin-bottom: 1em;
+  ul li {
+    margin-bottom: 1em;
+  }
 }
