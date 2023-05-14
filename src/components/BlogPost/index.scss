@@ -33,9 +33,10 @@
 }
 
 .backArrow {
-  position: absolute;
+  position: fixed;
   margin-top: 1.5%;
   left: 10%;
+  cursor: pointer;
 }
 
 .disqusThing {
