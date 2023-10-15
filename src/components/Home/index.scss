@@ -66,3 +66,12 @@
     }
   }
 }
+
+h2.nonSelectable {
+  height: 25px;
+  align-items: center;
+
+  span {
+    transition: font-size 3s linear;
+  }
+}

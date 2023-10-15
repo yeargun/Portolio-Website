@@ -4,13 +4,23 @@ import { useLayoutEffect } from "react";
 import { useState } from "react";
 import { marked } from "marked";
 
-debugger;
+const calculateReadingTime = (daText) => {
+  const wordsPerMinute = 200;
+  const plainText = daText
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const wordCount = plainText.split(" ").length;
+  return Math.ceil(wordCount / wordsPerMinute);
+};
+
 const blogPostId = window.location.pathname.split("/")[2];
 const disqus_config = () => {
   this.page.url = window.location.pathname;
   this.page.identifier = blogPostId;
 };
 const fetchUrl = "/blogPosts/" + blogPostId + ".md";
+// https://github.com/yeargun/Portolio-Website/edit/master/public/blogPosts/15102023.md
 const update =
   blogPostId?.substring(0, 2) +
   "." +
@@ -24,6 +34,7 @@ const BlogPost = () => {
   const navigate = useNavigate();
   const [md, setMd] = useState("<div></div>");
   const [postName, setPostName] = useState();
+  const [approximateTime2Read, setApproximateTime2Read] = useState();
 
   //this fetch makes me very mad. Bad design but yeah whatever
   useLayoutEffect(() => {
@@ -31,6 +42,7 @@ const BlogPost = () => {
       .then((res) => res.text())
       .then((text) => {
         setMd(marked(text.substring(text.indexOf("\n") + 1)));
+        setApproximateTime2Read(calculateReadingTime(text));
         setPostName(text.substring(0, text.indexOf("\n")));
       });
   }, []);
@@ -54,7 +66,9 @@ const BlogPost = () => {
       />
       <h1 className="blogTitle">{postName}</h1>
       <div className="extraInfo">
-        <h4 className="estimatedTime">4 mins d</h4>
+        <h4 className="estimatedTime">
+          {approximateTime2Read || "..."} mins d
+        </h4>
         <h4 className="lastUpdate">Last update: {update}</h4>
       </div>
       <hr />
@@ -62,6 +76,22 @@ const BlogPost = () => {
         className="blogPostContent"
         dangerouslySetInnerHTML={{ __html: md }}
       ></div>
+      <div className="editStarWrapper">
+        <a
+          className="editThisPageButton"
+          target="_blank"
+          href={`https://github.com/yeargun/Portolio-Website/edit/master/public/blogPosts/${blogPostId}.md`}
+        >
+          Edit this page
+        </a>
+        <a
+          className="editThisPageButton"
+          target="_blank"
+          href="https://github.com/yeargun/Portolio-Website/"
+        >
+          Star on GitHub
+        </a>
+      </div>
 
       <div id="disqus_thread" className="disqusThing"></div>
 

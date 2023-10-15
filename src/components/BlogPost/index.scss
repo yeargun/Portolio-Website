@@ -55,3 +55,33 @@
   font-size: large;
   width: auto;
 }
+
+.editStarWrapper {
+  display: flex;
+  align-items: center;
+  left: 53%;
+  position: absolute;
+  width: 80%;
+  transform: translate(-50%, -55px);
+  gap: 80px;
+}
+
+.editThisPageButton {
+  margin-top: 50px;
+  letter-spacing: 0.8rem;
+  word-spacing: 2.8rem;
+  text-align: center;
+  width: max-content;
+  padding: 10px 10.5% 10px 10.5%;
+  outline: 1px solid black;
+  text-decoration: none;
+  font-size: large;
+  width: fit-content;
+  height: auto;
+  color: black;
+  user-select: none;
+}
+.editThisPageButton:hover {
+  background-color: #000000;
+  color: white;
+}
