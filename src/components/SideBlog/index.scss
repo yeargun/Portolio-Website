@@ -54,3 +54,36 @@
     margin-bottom: 1em;
   }
 }
+
+.nextPageThing {
+  padding: 10px;
+  bottom: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+  width: auto;
+  font-weight: 700;
+  a {
+    text-decoration: none !important;
+    color: black !important;
+    &:hover {
+      font: 900;
+    }
+  }
+
+  .enterPageNum {
+    background-color: transparent;
+    border: 1px solid black;
+    min-width: 2ch;
+    border-radius: 5px;
+    max-width: 5ch;
+    color: black;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
