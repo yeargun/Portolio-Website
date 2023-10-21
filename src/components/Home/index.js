@@ -70,7 +70,7 @@ const Home = () => {
             />
           </h1>
           <h2 className="nonSelectable">
-            Spring Boot | Next.js | Node.js | ML | UI/UX
+            Spring Boot | Next.js | Node.js | ML |
             <span
               style={{
                 marginLeft: "5px",
@@ -79,48 +79,41 @@ const Home = () => {
               }}
               id="text0"
             >
-              r
+              U
             </span>
             <span
               id="text1"
-              style={{ color: "red", fontSize: `${fontSizes[1]}px` }}
+              style={{
+                color: "red",
+                fontSize: `${fontSizes[1]}px`,
+                marginLeft: "5px",
+              }}
             >
-              o
+              I
             </span>
             <span
               id="text2"
               style={{ color: "whitesmoke", fontSize: `${fontSizes[2]}px` }}
             >
-              O
+              /
             </span>
             <span
               id="text3"
               style={{ color: "greenyellow", fontSize: `${fontSizes[3]}px` }}
             >
-              k
-            </span>
-            <span
-              id="text4"
-              style={{
-                marginLeft: "5px",
-                color: "peru",
-                fontSize: `${fontSizes[4]}px`,
-              }}
-            >
-              İ
+              U
             </span>
             <span
               id="text5"
               style={{
-                marginLeft: "5px",
                 color: "yellow",
                 fontSize: `${fontSizes[5]}px`,
               }}
             >
-              e
+              X
             </span>
             <span style={{ fontSize: "8px", letterSpacing: "initial" }}>
-              (might be real funny. I indeed am learning)
+              (might be real funny)
             </span>
             <span style={{ color: "#0000", fontSize: "25px" }}>yeargun</span>
           </h2>
