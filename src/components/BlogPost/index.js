@@ -121,7 +121,7 @@ const BlogPost = () => {
       <div className="gitHardComments24">
         <giscus-widget
           id="comments"
-          repo="giscus/giscus"
+          repo="yeargun/Portolio-Website"
           repoid="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
           category="General"
           categoryid="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"

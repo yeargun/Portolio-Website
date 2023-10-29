@@ -7,7 +7,6 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import LayoutWithBlog from "./components/LayoutWithBlog";
-import SideBar from "./components/Sidebar";
 import BlogpostLayout from "./components/BlogPost/BlogpostLayout";
 const BlogPost = lazy(() => import("./components/BlogPost"));
 
