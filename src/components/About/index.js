@@ -40,27 +40,25 @@ const HardSpinningCube = () => {
 const About = () => {
   return (
     <>
-      <div className="container about-page">
-        <div className="text-zone">
-          <h1 className="nonSelectable">
-            <AnimatedLetters
-              letterClass="text-animate"
-              strArray={["A", "b", "o", "u", "t", " ", "m", "e"]}
-              idx={15}
-            />
-          </h1>
-          <p className="nonSelectable">I like to get things done.</p>
-          <p className="nonSelectable">
-            Chill and confident person. I enjoy spending time with my friends
-            and family.
-          </p>
-          <p className="nonSelectable">
-            I like gym, ski, coffee, humuor, sometimes I do nerd sh*t. I am
-            quite an interesting personality in that sense.
-          </p>
-        </div>
-        <HardSpinningCube />
+      <div className="text-zoneAbout">
+        <h1 className="nonSelectable">
+          <AnimatedLetters
+            letterClass="text-animate"
+            strArray={["A", "b", "o", "u", "t", " ", "m", "e"]}
+            idx={15}
+          />
+        </h1>
+        <p className="aboutP">I like to get things done.</p>
+        <p className="aboutP">
+          Chill and confident person. I enjoy spending time with my friends and
+          family.
+        </p>
+        <p className="aboutP">
+          I like gym, ski, coffee, humuor, sometimes I do nerd sh*t. I am quite
+          an interesting personality in that sense.
+        </p>
       </div>
+      <HardSpinningCube />
     </>
   );
 };

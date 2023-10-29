@@ -7,22 +7,14 @@
       background-color: #181818;
     }
   }
-
-  position: absolute;
-  bottom: 10%;
-  float: left;
-  width: 40%;
-  height: 100%;
-  vertical-align: middle;
-  display: table-cell;
-  max-height: 40%;
-  margin-top: 0;
-  left: -50px;
-
+  padding: 0 30px 0 0px;
   ul {
-    padding: auto;
-    margin: 0;
+    padding: initial;
+    margin: 55px 0 0 0;
+    position: relative !important;
     li {
+      position: relative !important;
+
       padding: 0;
       margin: 0;
       list-style: none;
@@ -94,28 +86,27 @@
   @media screen and (max-width: 1200px) {
     display: none;
   }
-  width: 57%;
+  flex: 1;
   height: 100%;
-  position: absolute;
-  left: 43%;
+  // width: 57%;
+  // height: 100%;
+  // left: 43%;
 
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  // top: 50%;
+  // -ms-transform: translateY(-50%);
+  // transform: translateY(-50%);
 }
 
 .text-zone {
   @media screen and (max-width: 1200px) {
     width: 60%;
   }
-  position: absolute;
-  // left: 8%;
-  top: 35%;
-  transform: translateY(-50%);
-  width: 40%;
+  margin-left: 40px;
+  width: 50%;
   vertical-align: middle;
   display: table-cell;
-  max-height: 90%;
+  padding: 4vh 15px 0 0;
+  // max-height: 90%;
 }
 .text-animate-hover {
   &:hover {
@@ -123,9 +114,10 @@
   }
 }
 
-.container.contact-page {
+.contact-page {
   height: 100%;
-  left: 105px;
+  left: 15px;
+  align-items: center;
   h1 {
     font-size: 53px;
     font-family: "Coolvetica";

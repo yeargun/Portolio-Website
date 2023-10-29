@@ -11,8 +11,8 @@ import {
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const SideBar = () => (
-  <div className="nav-bar">
-    <nav>
+  <nav className="nav-bar">
+    <div className="hoverable">
       <NavLink exact="true" activeclassname="active" to="/">
         <FontAwesomeIcon icon={faHome} color="#ffffff" />
       </NavLink>
@@ -29,23 +29,20 @@ const SideBar = () => (
       <NavLink activeclassname="active" className="contact-link" to="/contact">
         <FontAwesomeIcon icon={faEnvelope} color="#ffffff" />
       </NavLink>
-    </nav>
-    <ul>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/yeargun/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faLinkedin} color="#ffffff" />
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/yeargun" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faGithub} color="#ffffff" />
-        </a>
-      </li>
-    </ul>
-  </div>
+    </div>
+    <div className="socialNavButtonsWrapper">
+      <a
+        href="https://www.linkedin.com/in/yeargun/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faLinkedin} color="#ffffff" />
+      </a>
+
+      <a href="https://github.com/yeargun" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faGithub} color="#ffffff" />
+      </a>
+    </div>
+  </nav>
 );
 export default SideBar;

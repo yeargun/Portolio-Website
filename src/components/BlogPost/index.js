@@ -3,6 +3,7 @@ import "./index.scss";
 import { useLayoutEffect } from "react";
 import { useState } from "react";
 import { marked } from "marked";
+import "giscus";
 
 const calculateReadingTime = (daText) => {
   const wordsPerMinute = 200;
@@ -20,7 +21,6 @@ const disqus_config = () => {
   this.page.identifier = blogPostId;
 };
 const fetchUrl = "/blogPosts/" + blogPostId + ".md";
-// https://github.com/yeargun/Portolio-Website/edit/master/public/blogPosts/15102023.md
 const update =
   blogPostId?.substring(0, 2) +
   "." +
@@ -28,13 +28,12 @@ const update =
   "." +
   blogPostId?.substring(4);
 
-console.log("asdasdas");
-
 const BlogPost = () => {
   const navigate = useNavigate();
   const [md, setMd] = useState("<div></div>");
   const [postName, setPostName] = useState();
   const [approximateTime2Read, setApproximateTime2Read] = useState();
+  const [stargazerCount, setStargazerCount] = useState(null);
 
   //this fetch makes me very mad. Bad design but yeah whatever
   useLayoutEffect(() => {
@@ -45,6 +44,10 @@ const BlogPost = () => {
         setApproximateTime2Read(calculateReadingTime(text));
         setPostName(text.substring(0, text.indexOf("\n")));
       });
+
+    fetch("https://api.github.com/repos/yeargun/Portolio-Website")
+      .then((res) => res.json())
+      .then((json) => setStargazerCount(json?.stargazers_count));
   }, []);
 
   (function () {
@@ -76,11 +79,21 @@ const BlogPost = () => {
         className="blogPostContent"
         dangerouslySetInnerHTML={{ __html: md }}
       ></div>
+
+      {/*  DISQUS COMMENT SECTION 
+      <div id="disqus_thread" className="disqusThing"></div>
+
+      <noscript>
+        Please enable JavaScript to view the{" "}
+        <a href="https://disqus.com/?ref_noscript">
+          comments powered by Disqus.
+        </a>
+      </noscript> */}
       <div className="editStarWrapper">
         <a
           className="editThisPageButton"
           target="_blank"
-          href={`https://github.com/yeargun/Portolio-Website/edit/master/public/blogPosts/${blogPostId}.md`}
+          href={`https://github.com/yeargun/Portolio-Website/blob/master/public/blogPosts/${blogPostId}.md`}
         >
           Edit this page
         </a>
@@ -90,17 +103,38 @@ const BlogPost = () => {
           href="https://github.com/yeargun/Portolio-Website/"
         >
           Star on GitHub
+          {(stargazerCount || stargazerCount === 0) && (
+            <>
+              <img
+                style={{ marginLeft: "0.5em" }}
+                src="/images/github_star.svg"
+                width="20em"
+                height="20em"
+                onClick={() => navigate(-1)}
+              />
+              <div style={{ fontSize: "smaller" }}>{stargazerCount}</div>
+            </>
+          )}
         </a>
       </div>
 
-      <div id="disqus_thread" className="disqusThing"></div>
-
-      <noscript>
-        Please enable JavaScript to view the{" "}
-        <a href="https://disqus.com/?ref_noscript">
-          comments powered by Disqus.
-        </a>
-      </noscript>
+      <div className="gitHardComments24">
+        <giscus-widget
+          id="comments"
+          repo="giscus/giscus"
+          repoid="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
+          category="General"
+          categoryid="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
+          mapping="specific"
+          term="Welcome to giscus!"
+          reactionsenabled="1"
+          emitmetadata="0"
+          inputposition="top"
+          theme="light"
+          lang="en"
+          loading="lazy"
+        ></giscus-widget>
+      </div>
     </div>
   );
 };

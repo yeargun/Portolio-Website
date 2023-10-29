@@ -7,6 +7,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import LayoutWithBlog from "./components/LayoutWithBlog";
+import SideBar from "./components/Sidebar";
+import BlogpostLayout from "./components/BlogPost/BlogpostLayout";
 const BlogPost = lazy(() => import("./components/BlogPost"));
 
 function App() {
@@ -22,8 +24,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/shut/*" element={<BlogPost />} />
             <Route path="*" element={<Portfolio />} />
+          </Route>
+          <Route path="/" element={<BlogpostLayout />}>
+            <Route path="/shut/*" element={<BlogPost />} />
           </Route>
         </Routes>
       </Suspense>

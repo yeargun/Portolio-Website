@@ -25,24 +25,37 @@ const Contact = () => {
       });
   };
 
-  return (
-    <>
-      <div className="container contact-page">
-        <div className="text-zone">
-          <h1 className="nonSelectable">
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
-              idx={15}
-            />
-          </h1>
-          <p className="nonSelectable">
-            As of now, I'm more focused on backend, system design and cloud
-            native applications but at the end of the day I'm interested in
-            solving problems.
-          </p>
-        </div>
+  // return (
+  //   <>
+  //     <div className="container contact-page">
 
+  //     </div>
+  //   </>
+  // );
+
+  return (
+    <div
+      className=" contact-page  "
+      style={{
+        display: "flex",
+        position: "relative",
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <div className=" text-zone">
+        <h1 className="nonSelectable">
+          <AnimatedLetters
+            letterClass={letterClass}
+            strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
+            idx={15}
+          />
+        </h1>
+        <p className="nonSelectable">
+          As of now, I'm more focused on backend, system design and cloud native
+          applications but at the end of the day I'm interested in solving
+          problems.
+        </p>
         <div className="contact-form">
           <form ref={refForm} onSubmit={sendEmail}>
             <ul>
@@ -73,20 +86,21 @@ const Contact = () => {
             </ul>
           </form>
         </div>
-        <div className="map-wrap">
-          <iframe
-            className="map"
-            style={{ width: "100%", height: "100%" }}
-            frameBorder="0"
-            scrolling="no"
-            marginHeight="0"
-            marginWidth="0"
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?width=683&amp;height=479&amp;hl=en&amp;q=%20Ankara+(Home)&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          ></iframe>
-        </div>
       </div>
-    </>
+
+      <div className="map-wrap">
+        <iframe
+          className="map"
+          style={{ width: "100%", height: "100%" }}
+          frameBorder="0"
+          scrolling="no"
+          marginHeight="0"
+          marginWidth="0"
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?width=683&amp;height=479&amp;hl=en&amp;q=%20Ankara+(Home)&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>
+      </div>
+    </div>
   );
 };
 

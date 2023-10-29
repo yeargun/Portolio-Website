@@ -1,159 +1,163 @@
 .nav-bar {
-  background: #000000;
-  position: absolute;
-  top: 0;
-  z-index: 3;
-  @media screen and (min-width: 768px) {
-    width: 60px;
-    height: 100%;
-    nav {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  width: 4vw;
+  background-color: black;
+  justify-content: center;
+  z-index: 5;
+  .hoverable {
+    a {
+      font-size: 22px;
       display: block;
-      text-align: center;
-      position: absolute;
-      height: 210px;
-      top: 50%;
-      margin-top: -120px;
-      width: 100%;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
 
-      a {
-        font-size: 22px;
-        display: block;
-        line-height: 51px;
-        height: 51px;
-        position: relative;
-
-        i {
-          transition: all 0.3s ease-out;
-        }
-
-        &:hover {
-          color: #ffd700;
-
-          svg {
-            opacity: 0;
-          }
-
-          &:after {
-            opacity: 1;
-          }
-        }
-
-        &:after {
-          content: '';
-          font-size: 8px;
-          letter-spacing: 2px;
-          position: absolute;
-          bottom: 0;
-          display: block;
-          width: 100%;
-          text-align: center;
-          opacity: 0;
-          -webkit-transition: all 0.3s ease-out;
-          transition: all 0.3s ease-out;
-        }
-
-        &:first-child {
-          &:after {
-            content: 'HOME';
-          }
-        }
+      i {
+        transition: all 0.3s ease-out;
       }
 
-      a.about-link {
-        &:after {
-          content: 'ABOUT';
-        }
-      }
+      &:hover {
+        color: #ffd700;
 
-      a.contact-link {
-        &:after {
-          content: 'CONTACT';
-        }
-      }
-
-      a.portfolio-link {
-        &:after {
-          content: 'PORTFOLIO';
-        }
-      }
-
-      a.active {
         svg {
-          color: #ffd700;
+          opacity: 0;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: "";
+        font-size: 8px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      &:first-child {
+        &:after {
+          content: "HOME";
         }
       }
     }
 
-    ul {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      display: block;
-      padding: 0;
-      list-style: none;
-      text-align: center;
-      margin: 0;
+    a.about-link {
+      &:after {
+        content: "ABOUT";
+      }
+    }
 
-      li {
-        a {
-          padding: 7px 0;
-          display: block;
-          font-size: 23px;
-          line-height: 20px;
-          color: #ffffff;
+    a.contact-link {
+      &:after {
+        content: "CONTACT";
+      }
+    }
 
-          &:hover {
-            color: #ffd700;
-          }
-        }
+    a.portfolio-link {
+      &:after {
+        content: "PORTFOLIO";
+      }
+    }
+
+    a.active {
+      svg {
+        color: #ffd700;
       }
     }
   }
 
-  @media screen and (max-width: 768px) {
+  .socialNavButtonsWrapper {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    width: 4vw;
+    align-items: center;
+    flex-direction: column;
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  ul {
+    position: absolute;
+    bottom: 20px;
     width: 100%;
-    height: 60px;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
 
-    nav {
-      top: 5px;
-      text-align: left;
-      // justify-content: center;
-      position: absolute;
-      width: 100%;
-      height: 60px;
-
+    li {
       a {
-        margin-left: 5%;
-        font-size: 30px;
+        padding: 7px 0;
+        display: block;
+        font-size: 23px;
+        line-height: 20px;
         color: #ffffff;
-        line-height: 51px;
-      }
 
-      a.active {
-        svg {
+        &:hover {
           color: #ffd700;
-        }
-      }
-    }
-
-    ul {
-      text-align: right;
-      right: 1%;
-      top: 8px;
-      position: absolute;
-      width: 100%;
-      height: 60px;
-      margin-top: 0px;
-
-      li {
-        display: inline;
-        a {
-          padding-left: 15px;
-          padding-right: 10px;
-          font-size: 30px;
-          color: #ffffff;
         }
       }
     }
   }
 }
+
+// @media screen and (max-width: 768px) {
+//   width: 100%;
+//   height: 60px;
+
+//   nav {
+//     top: 5px;
+//     text-align: left;
+//     // justify-content: center;
+//     position: absolute;
+//     width: 100%;
+//     height: 60px;
+
+//     a {
+//       margin-left: 5%;
+//       font-size: 30px;
+//       color: #ffffff;
+//       line-height: 51px;
+//     }
+
+//     a.active {
+//       svg {
+//         color: #ffd700;
+//       }
+//     }
+//   }
+
+//   ul {
+//     text-align: right;
+//     right: 1%;
+//     top: 8px;
+//     position: absolute;
+//     width: 100%;
+//     height: 60px;
+//     margin-top: 0px;
+
+//     li {
+//       display: inline;
+//       a {
+//         padding-left: 15px;
+//         padding-right: 10px;
+//         font-size: 30px;
+//         color: #ffffff;
+//       }
+//     }
+//   }
+// }

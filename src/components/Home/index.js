@@ -45,82 +45,80 @@ const Home = () => {
   ];
 
   return (
-    <div>
-      <div className="container home-page">
-        <div className="text-zone">
-          <h1 className="nonSelectable">
-            <span className={letterClass}>H</span>
-            <span className={`${letterClass} _12`}>i,</span>
-            <br />
-            <span className={`${letterClass} _13`}>I</span>
-            <span className={`${letterClass} _14`}>'m&nbsp;</span>
+    <div className="home-page">
+      <div className="text-zone">
+        <h1 className="nonSelectable">
+          <span className={letterClass}>H</span>
+          <span className={`${letterClass} _12`}>i,</span>
+          <br />
+          <span className={`${letterClass} _13`}>I</span>
+          <span className={`${letterClass} _14`}>'m&nbsp;</span>
 
-            <AnimatedLetters
-              className="nameAnimatedLetters"
-              letterClass={letterClass}
-              strArray={nameArray}
-              idx={15}
-            />
-            <br />
-            <AnimatedLetters
-              className="jobAnimatedLetters"
-              letterClass={letterClass}
-              strArray={jobArray}
-              idx={22}
-            />
-          </h1>
-          <h2 className="nonSelectable">
-            Spring Boot | Next.js | Node.js | ML |
-            <span
-              style={{
-                marginLeft: "5px",
-                color: "blueviolet",
-                fontSize: `${fontSizes[0]}px`,
-              }}
-              id="text0"
-            >
-              U
-            </span>
-            <span
-              id="text1"
-              style={{
-                color: "red",
-                fontSize: `${fontSizes[1]}px`,
-                marginLeft: "5px",
-              }}
-            >
-              I
-            </span>
-            <span
-              id="text2"
-              style={{ color: "whitesmoke", fontSize: `${fontSizes[2]}px` }}
-            >
-              /
-            </span>
-            <span
-              id="text3"
-              style={{ color: "greenyellow", fontSize: `${fontSizes[3]}px` }}
-            >
-              U
-            </span>
-            <span
-              id="text5"
-              style={{
-                color: "yellow",
-                fontSize: `${fontSizes[5]}px`,
-              }}
-            >
-              X
-            </span>
-            <span style={{ fontSize: "8px", letterSpacing: "initial" }}>
-              (might be real funny)
-            </span>
-            <span style={{ color: "#0000", fontSize: "25px" }}>yeargun</span>
-          </h2>
-          <Link to="/contact" className="flat-button">
-            CONTACT ME
-          </Link>
-        </div>
+          <AnimatedLetters
+            className="nameAnimatedLetters"
+            letterClass={letterClass}
+            strArray={nameArray}
+            idx={15}
+          />
+          <br />
+          <AnimatedLetters
+            className="jobAnimatedLetters"
+            letterClass={letterClass}
+            strArray={jobArray}
+            idx={22}
+          />
+        </h1>
+        <h2 className="nonSelectable">
+          Spring Boot | Next.js | Node.js | ML |
+          <span
+            style={{
+              marginLeft: "5px",
+              color: "blueviolet",
+              fontSize: `${fontSizes[0]}px`,
+            }}
+            id="text0"
+          >
+            U
+          </span>
+          <span
+            id="text1"
+            style={{
+              color: "red",
+              fontSize: `${fontSizes[1]}px`,
+              marginLeft: "5px",
+            }}
+          >
+            I
+          </span>
+          <span
+            id="text2"
+            style={{ color: "whitesmoke", fontSize: `${fontSizes[2]}px` }}
+          >
+            /
+          </span>
+          <span
+            id="text3"
+            style={{ color: "greenyellow", fontSize: `${fontSizes[3]}px` }}
+          >
+            U
+          </span>
+          <span
+            id="text5"
+            style={{
+              color: "yellow",
+              fontSize: `${fontSizes[5]}px`,
+            }}
+          >
+            X
+          </span>
+          <span style={{ fontSize: "8px", letterSpacing: "initial" }}>
+            (might be real funny)
+          </span>
+          <span style={{ color: "#0000", fontSize: "25px" }}>yeargun</span>
+        </h2>
+        <Link to="/contact" className="flat-button">
+          CONTACT ME
+        </Link>
       </div>
     </div>
   );
