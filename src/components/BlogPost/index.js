@@ -134,7 +134,6 @@ const BlogPost = () => {
           theme="light"
           lang="en"
           loading="lazy"
-          crossorigin="anonymous"
         ></giscus-widget>
       </div>
     </div>
