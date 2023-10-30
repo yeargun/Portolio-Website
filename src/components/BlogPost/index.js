@@ -126,13 +126,15 @@ const BlogPost = () => {
           category="Announcements"
           categoryid="DIC_kwDOH1Tdls4CaiJV"
           mapping="pathname"
-          term="Welcome to giscus!"
+          data-strict="0"
           reactionsenabled="1"
+          term="Welcome to giscus!"
           emitmetadata="0"
           inputposition="top"
           theme="light"
           lang="en"
           loading="lazy"
+          crossorigin="anonymous"
         ></giscus-widget>
       </div>
     </div>
