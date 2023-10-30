@@ -1,14 +1,40 @@
 import Layout from "./components/Layout";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import LayoutWithBlog from "./components/LayoutWithBlog";
 import BlogpostLayout from "./components/BlogPost/BlogpostLayout";
-const BlogPost = lazy(() => import("./components/BlogPost"));
+import BlogPost from "./components/BlogPost";
+import {
+  enable as enableDarkMode,
+  disable as disableDarkMode,
+  auto as followSystemColorScheme,
+} from "darkreader";
+import { getBCS } from "./components/ThemeGod/utils";
+function applyTheme() {
+  const theme = localStorage.getItem("theme");
+  console.log("theme this", theme);
+  if (theme === "dark") {
+    enableDarkMode(getBCS());
+  } else if (theme === "light") {
+    disableDarkMode();
+  } else {
+    followSystemColorScheme();
+  }
+}
+
+applyTheme();
+
+// Listen for changes to the "theme" key in local storage
+window.addEventListener("storage", (event) => {
+  if (event.key === "theme") {
+    applyTheme();
+  }
+});
 
 function App() {
   return (

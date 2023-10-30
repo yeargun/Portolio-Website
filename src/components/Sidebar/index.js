@@ -9,9 +9,11 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import ThemeGod from "../ThemeGod";
 
 const SideBar = () => (
   <nav className="nav-bar">
+    <ThemeGod />
     <div className="hoverable">
       <NavLink exact="true" activeclassname="active" to="/">
         <FontAwesomeIcon icon={faHome} color="#ffffff" />
