@@ -16,10 +16,10 @@ const calculateReadingTime = (daText) => {
 };
 
 const blogPostId = window.location.pathname.split("/")[2];
-const disqus_config = () => {
-  this.page.url = window.location.pathname;
-  this.page.identifier = blogPostId;
-};
+// const disqus_config = () => {
+//   this.page.url = window.location.pathname;
+//   this.page.identifier = blogPostId;
+// };
 const fetchUrl = "/blogPosts/" + blogPostId + ".md";
 const update =
   blogPostId?.substring(0, 2) +
@@ -50,13 +50,13 @@ const BlogPost = () => {
       .then((json) => setStargazerCount(json?.stargazers_count));
   }, []);
 
-  (function () {
-    var d = document,
-      s = d.createElement("script");
-    s.src = "https://yeargun.disqus.com/embed.js";
-    s.setAttribute("data-timestamp", +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
+  // (function () {
+  //   var d = document,
+  //     s = d.createElement("script");
+  //   s.src = "https://yeargun.disqus.com/embed.js";
+  //   s.setAttribute("data-timestamp", +new Date());
+  //   (d.head || d.body).appendChild(s);
+  // })();
 
   return (
     <div className="blogPage">
@@ -131,7 +131,11 @@ const BlogPost = () => {
           term="Welcome to giscus!"
           emitmetadata="0"
           inputposition="top"
-          theme="light"
+          theme={
+            localStorage.getItem("theme") === "dark"
+              ? "transparent_dark"
+              : "light"
+          }
           lang="en"
           loading="lazy"
         ></giscus-widget>

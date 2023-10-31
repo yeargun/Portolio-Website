@@ -1,9 +1,9 @@
 import "./index.scss";
 import React, { useState } from "react";
+//just wanted to test.
 import {
   enable as enableDarkMode,
   disable as disableDarkMode,
-  auto as followSystemColorScheme,
 } from "darkreader";
 import { useEffect } from "react";
 import { setBCS, valueToBCS, getBCS, getSliderValue } from "./utils";
@@ -28,7 +28,14 @@ const ThemeGod = () => {
 
   return (
     <div className="themeGodWrapper">
-      {theme !== "dark" && <button onClick={handleThemeGodClick}>☀️</button>}
+      {theme !== "dark" && (
+        <button
+          style={{ outline: "none!important" }}
+          onClick={handleThemeGodClick}
+        >
+          ☀️
+        </button>
+      )}
       {theme === "dark" && (
         <>
           <button
@@ -41,8 +48,7 @@ const ThemeGod = () => {
           </button>
           <div className="range-slider">
             <input
-              class="input-range"
-              orient="vertical"
+              className="input-range"
               type="range"
               step="0.5"
               value={sliderValue}
@@ -55,7 +61,6 @@ const ThemeGod = () => {
                 setSliderValue(e.target.value);
               }}
             />
-            <span className="range-value"></span>
           </div>
           <div className="d"></div>
         </>

@@ -17,15 +17,31 @@
     left: 50%;
     transform: unset;
     .input-range {
-      height: auto;
-      border-radius: 5px;
-      background: #ccc;
       outline: none;
+      -webkit-appearance: none;
+      background-color: yellow;
+      border-radius: 5px;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      cursor: pointer;
+      box-shadow: 1px 1px 1px #50555c;
+      border-radius: 5px;
+      border: 0px solid #000000;
+      background-color: yellow;
+      height: 10px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      width: 11px;
+      height: 11px;
+      -webkit-appearance: none;
+      //   height: 12px;
+      background: black;
+      border-radius: 50%;
     }
   }
 
   ::-moz-range-track {
-    background: #ccc;
+    // background: #ccc;
     border: 0;
   }
 
