@@ -45,7 +45,9 @@ const Page = () => {
           />
         </h1>
         <p className={styles.nonSelectable}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           As of now, I'm more focused on backend, system design and cloud native
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           applications but at the end of the day I'm interested in solving
           problems.
         </p>

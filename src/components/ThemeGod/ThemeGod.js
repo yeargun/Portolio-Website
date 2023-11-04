@@ -24,6 +24,7 @@ const ThemeGod = () => {
     };
     useEffect(() => {
         setTheme(localStorage.getItem("theme"));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [localStorage.getItem("theme")]);
 
     return (
