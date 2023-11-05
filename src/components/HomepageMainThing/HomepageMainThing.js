@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from 'next/link'
-import AnimatedLetters from "components/AnimatedLetters/AnimatedLetters";
+import AnimatedLetters from "@components/AnimatedLetters/AnimatedLetters";
 import styles from "./HomePageMainThing.module.scss";
 
 const hardFontSizer = () => {

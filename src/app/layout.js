@@ -1,8 +1,8 @@
 'use client'
 import './globals.css';
-import SideBar from "components/Sidebar/sidebar";
+import SideBar from "@components/Sidebar/sidebar";
 import Image from "next/image";
-import SideBlog from "components/Sideblog/Sideblog";
+import SideBlog from "@components/Sideblog/Sideblog";
 import {useEffect, useState} from "react";
 import { usePathname } from 'next/navigation'
 
@@ -13,7 +13,7 @@ export default function RootLayout({ children, params }) {
     useEffect(() => {
         if(pathName === '/' || pathName.split('/')[1] === 'p'){
             const importComponent = async () => {
-                const sideblog = (await import("components/Sideblog/Sideblog")).default;
+                const sideblog = (await import("@components/Sideblog/Sideblog")).default;
                 setSideBlog(() => sideblog);
             };
             importComponent();

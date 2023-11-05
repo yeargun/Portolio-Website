@@ -7,7 +7,7 @@ import {
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./pageabout.module.scss";
-import AnimatedLetters from "components/AnimatedLetters/AnimatedLetters";
+import AnimatedLetters from "@components/AnimatedLetters/AnimatedLetters";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const HardSpinningCube = () => {

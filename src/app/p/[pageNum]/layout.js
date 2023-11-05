@@ -1,8 +1,8 @@
 'use client'
-import 'app/globals.css';
-import SideBar from "components/Sidebar/sidebar";
+import '@app/globals.css';
+import SideBar from "@components/Sidebar/sidebar";
 import Image from "next/image";
-import SideBlog from "components/Sideblog/Sideblog";
+import SideBlog from "@components/Sideblog/Sideblog";
 import {useEffect, useState} from "react";
 
 const page = 0;
@@ -11,7 +11,7 @@ export default function RootLayout({ children, params }) {
 
     useEffect(() => {
             const importComponent = async () => {
-                const sideblog = (await import("components/Sideblog/Sideblog")).default;
+                const sideblog = (await import("@components/Sideblog/Sideblog")).default;
                 setSideBlog(() => sideblog);
             };
             importComponent();

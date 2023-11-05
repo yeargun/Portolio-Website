@@ -5,8 +5,8 @@ import { marked } from "marked";
 import "giscus";
 import { useRouter } from 'next/navigation'
 import Image from "next/image";
-import {useGetLocalStorage} from "hooks/useLocalStorage";
-import {useGetBCS} from "components/ThemeGod/utils";
+import {useGetLocalStorage} from "@hooks/useLocalStorage";
+import {useGetBCS} from "@components/ThemeGod/utils";
 
 const calculateReadingTime = (daText) => {
     const wordsPerMinute = 200;

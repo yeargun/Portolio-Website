@@ -1,4 +1,4 @@
-import {setLocalStorage, useGetLocalStorage} from "hooks/useLocalStorage";
+import {setLocalStorage, useGetLocalStorage} from "@hooks/useLocalStorage";
 
 const valueToBCS = (value) => {
     if (value < 5)

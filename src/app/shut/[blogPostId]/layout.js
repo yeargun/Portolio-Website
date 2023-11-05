@@ -1,6 +1,5 @@
-import 'app/globals.css';
-import SideBar from "components/Sidebar/sidebar";
-import Image from "next/image";
+import '@app/globals.css';
+import SideBar from "@components/Sidebar/sidebar";
 
 const page = 0;
 export default function RootLayout({ children }) {
