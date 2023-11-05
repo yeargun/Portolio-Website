@@ -17,6 +17,7 @@ export default function NewsLetter() {
     const setSubmitButtonRef = useRefWithCallback(disableSubmitButtonCallbackOnMount, doNone)
     const [ReactConfetti, setReactConfetti] = useState(null);
     const [showConfettis, setShowConfettis] = useState(false);
+    const [showCongratulations, setShowCongratulations] = useState(false);
     const [isSubscribedAlready, setIsSubscribedAlready] = useState(false);
     const [showAnim, setShowAnim] = useState(false);
     useEffect(() => {
@@ -43,15 +44,18 @@ export default function NewsLetter() {
             setIsSubscribedAlready(true);
             setShowConfettis(true)
             setShowAnim(true)
-            setShowConfettis(true);
+            setShowConfettis(true)
+            setShowCongratulations(true);
             setTimeout(() => {
                 setShowConfettis(false);
+                setShowCongratulations(false);
 
-            }, 9000);
+            }, 6300)
+
             setTimeout(() => {
                 setShowAnim(false);
 
-            }, 5500);
+            }, 3500);
         } catch (error) {
             setShowConfettis(false)
         }
@@ -61,22 +65,23 @@ export default function NewsLetter() {
         submitButtonRef.current.disabled = !emailPattern.test(e.target.value)
     }
 
+    if(isSubscribedAlready) return <>
+        {showCongratulations && <h3 className={styles.congratsMessage}>Congrats! Successfully subscribed</h3>}
+        { ReactConfetti && showConfettis &&(
+            <ReactConfetti
+                width={window?.innerWidth}
+                height={window?.innerHeight}
+                numberOfPieces={550}
+                run={true}
+                recycle={false}
+            />
+        )}
+    </>
     return (
         <>
-            { ReactConfetti && showConfettis &&(
-                <ReactConfetti
-                    width={window?.innerWidth}
-                    height={window?.innerHeight}
-                    numberOfPieces={550}
-                    run={true}
-                    recycle={showAnim}
-                />
-            )}
+
             <div className={styles.theWrapper}>
                 <div className={styles.description}>
-                    {/*<h1 >*/}
-                    {/*    Subscribe to the newsletter!*/}
-                    {/*</h1>*/}
                     <p>
                         Receive notifications from <b>high-quality</b> opinions of mine. Lifestyle, computer science
                         related.
