@@ -10,6 +10,7 @@ const SideBlog = ({ currentPage = undefined}) => {
     const [currPage, setCurrPage] = useState(parseInt(currentPage || match && match[1] || 0))
     const [fileData, setFileData] = useState([]);
     const [selectedPage, setSelectedPage] = useState(currPage || 0);
+    const [NewsletterComp, setNewsletterComp] = useState(null);
 
     useEffect(() => {
         fetch("/blogPosts/metaD.txt")
@@ -17,6 +18,9 @@ const SideBlog = ({ currentPage = undefined}) => {
             .then((text) => {
                 setFileData(text.split("\n"));
             });
+        import("@components/Newsletter/Newsletter").then(module => {
+            setNewsletterComp(()=> module.default)
+        })
     }, []);
 
     const hasPrev = currPage > 0;
@@ -73,8 +77,6 @@ const SideBlog = ({ currentPage = undefined}) => {
                         <>
                             <div onClick={() => handlePageChange(0)}>0</div>
                             <div onClick={() => handlePageChange(currPage - 1)}>{currPage - 1}</div>
-                       {/*     <a href="/">{0}</a>
-                            <a href={`/p/${currPage - 1}`}>{currPage - 1}</a>*/}
                         </>
                     )}
                     <input
@@ -99,7 +101,6 @@ const SideBlog = ({ currentPage = undefined}) => {
                     {currPage + 1 == Math.floor(fileData?.length / 10) && (
                         <>
                             <div onClick={() => handlePageChange(currPage + 1)}>{currPage + 1}</div>
-                            {/*<a href={`/p/${currPage + 1}`}>{currPage + 1}</a>*/}
                             <div style={{ color: "#0000", userSelect: "none" }}>0</div>
                         </>
                     )}
@@ -107,15 +108,12 @@ const SideBlog = ({ currentPage = undefined}) => {
                         <>
                             <div onClick={() => handlePageChange(currPage + 1)}>{currPage + 1}</div>
                             <div onClick={() => handlePageChange(Math.floor(fileData?.length / 10))}>{Math.floor(fileData?.length / 10)}</div>
-
-                            {/*<a href={`/p/${currPage + 1}`}>{currPage + 1}</a>
-                            <a href={`/p/${Math.floor(fileData?.length / 10)}`}>
-                                {Math.floor(fileData?.length / 10)}
-                            </a>*/}
                         </>
                     )}
                 </div>
             )}
+            {NewsletterComp && <NewsletterComp />}
+
         </div>
     );
 };
