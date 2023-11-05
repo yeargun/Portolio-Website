@@ -1,31 +1,32 @@
-'use client'
+'use client';
 import styles from "./ThemeGod.module.scss";
-import React, { useState } from "react";
-import {
-    enable as enableDarkMode,
-    disable as disableDarkMode,
-} from "darkreader";
-import { useEffect } from "react";
-import { setBCS, valueToBCS, getBCS, getSliderValue } from "./utils";
+import React, {useEffect, useLayoutEffect, useState} from "react";
+import { setBCS, valueToBCS, useGetBCS, useGetSliderValue } from "./utils";
+import {setLocalStorage, useGetLocalStorage} from "@/hooks/useLocalStorage";
 
 const ThemeGod = () => {
-    const [sliderValue, setSliderValue] = useState(getSliderValue());
-    const [theme, setTheme] = useState(localStorage.getItem("theme"));
-    const handleThemeGodClick = () => {
-        if (localStorage.getItem("theme") === "dark") {
-            disableDarkMode();
-            localStorage.setItem("theme", "light");
-            setTheme("light");
+    const [sliderValue, setSliderValue] = useState(useGetSliderValue());
+    const theme_storage = useGetLocalStorage('theme')
+    const [theme, setTheme] = useState(theme_storage);
+    const BCS = useGetBCS();
+    useLayoutEffect(() => {
+        if (theme === "dark") {
+            import('darkreader').then(module => module.enable(BCS))
         } else {
-            enableDarkMode(getBCS());
-            localStorage.setItem("theme", "dark");
+            import('darkreader').then(module => module.disable())
+        }
+    }, [theme]);
+
+    const handleThemeGodClick = () => {
+        if (theme_storage === "dark") {
+            setLocalStorage("theme", "light");
+            setTheme("light"); //keeping these for faster rerender hopefully
+        } else {
+            setLocalStorage("theme", "dark");
             setTheme("dark");
         }
     };
-    useEffect(() => {
-        setTheme(localStorage.getItem("theme"));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [localStorage.getItem("theme")]);
+
 
     return (
         <div className={styles.themeGodWrapper}>
@@ -55,9 +56,9 @@ const ThemeGod = () => {
                             value={sliderValue}
                             min="0"
                             max="10"
-                            onChange={(e) => {
+                            onChange={ (e) => {
                                 const obj = valueToBCS(e.target.value);
-                                enableDarkMode(valueToBCS(e.target.value));
+                                import('darkreader').then(module => module.enable(valueToBCS(e.target.value)))
                                 setBCS(obj);
                                 setSliderValue(e.target.value);
                             }}

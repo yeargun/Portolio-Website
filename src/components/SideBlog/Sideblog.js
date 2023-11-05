@@ -11,10 +11,7 @@ const SideBlog = ({ currentPage = undefined}) => {
     const [fileData, setFileData] = useState([]);
     const [selectedPage, setSelectedPage] = useState(currPage || 0);
 
-    console.log('Sideblogg rn')
     useEffect(() => {
-        console.log('Sideblogg useeff')
-
         fetch("/blogPosts/metaD.txt")
             .then((res) => res.text())
             .then((text) => {
@@ -28,13 +25,14 @@ const SideBlog = ({ currentPage = undefined}) => {
     const handlePageChange = useCallback((pageNum) => {
         setCurrPage(parseInt(pageNum))
         router.push(`/p/${pageNum}`, undefined, { shallow: true })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleEnter = useCallback((e)=>{
             if (e.key === 'Enter'){
                 handlePageChange(selectedPage)
             }
-    },[selectedPage])
+    },[handlePageChange, selectedPage])
 
     return (
         <div className={styles.sideBlogWrapper}>
@@ -46,7 +44,7 @@ const SideBlog = ({ currentPage = undefined}) => {
                         let name = val.substring(11);
 
                         return (
-                            <li id={ind} className={styles.postTitleWrapper}>
+                            <li id={ind} key={name} className={styles.postTitleWrapper}>
                                 <a className={styles.postTitle} href={url}>
                                     {name}
                                 </a>

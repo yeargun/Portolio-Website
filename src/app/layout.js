@@ -22,7 +22,7 @@ export default function RootLayout({ children, params }) {
             importComponent();
         }
 
-    }, []);
+    }, [pathName]);
 
   return (
     <html lang="en">

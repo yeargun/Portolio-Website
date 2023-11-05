@@ -1,10 +1,12 @@
 'use client'
 import styles from './BlogPost.module.scss';
-import { useLayoutEffect, useState } from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import { marked } from "marked";
 import "giscus";
 import { useRouter } from 'next/navigation'
 import Image from "next/image";
+import {useGetLocalStorage} from "@/hooks/useLocalStorage";
+import {useGetBCS} from "@/components/ThemeGod/utils";
 
 const calculateReadingTime = (daText) => {
     const wordsPerMinute = 200;
@@ -17,7 +19,7 @@ const calculateReadingTime = (daText) => {
 };
 
 
-const blogPostId = window.location.pathname.split("/")[2];
+const blogPostId = typeof window === 'undefined' ? undefined :  window.location.pathname.split("/")[2];
 const fetchUrl = "/blogPosts/" + blogPostId + ".md";
 const update =
     blogPostId?.substring(0, 2) +
@@ -31,6 +33,16 @@ const BlogPost = () => {
     const [postName, setPostName] = useState();
     const [stargazerCount, setStargazerCount] = useState(null);
     const router = useRouter()
+    const theme = useGetLocalStorage('theme')
+    const BCS = useGetBCS();
+
+    useEffect(() => {
+        if (theme === "dark") {
+            import('darkreader').then(module => module.enable(BCS))
+        } else {
+            import('darkreader').then(module => module.disable())
+        }
+    }, [BCS]);
 
     //this fetch makes me very mad. Bad design but yeah whatever
     useLayoutEffect(() => {
@@ -116,7 +128,7 @@ const BlogPost = () => {
                     emitmetadata="0"
                     inputposition="top"
                     theme={
-                        localStorage.getItem("theme") === "dark"
+                        theme === "dark"
                             ? "transparent_dark"
                             : "light"
                     }

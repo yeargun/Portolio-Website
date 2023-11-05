@@ -1,8 +1,6 @@
 "use client";
 import styles from "./Sidebar.module.scss";
 import Link from 'next/link'
-
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,

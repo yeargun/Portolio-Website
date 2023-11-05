@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from 'next/link'
-// import './globals.css'
 import AnimatedLetters from "@/components/AnimatedLetters/AnimatedLetters";
 import styles from "./HomePageMainThing.module.scss";
 
@@ -54,6 +53,7 @@ export default function Page() {
                     <span className={`${letterClass} _12`}>i,</span>
                     <br />
                     <span className={`${letterClass} _13`}>I</span>
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
                     <span className={`${letterClass} _14`}>'m&nbsp;</span>
 
                     <AnimatedLetters

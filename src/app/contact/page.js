@@ -1,5 +1,5 @@
 "use client";
-import AnimatedLetters from "@/components/AnimatedLetters/AnimatedLetters.jsx";
+import AnimatedLetters from "@/components/AnimatedLetters/AnimatedLetters";
 import styles from "./contact.module.scss";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";

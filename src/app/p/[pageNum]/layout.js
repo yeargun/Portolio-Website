@@ -1,5 +1,3 @@
-// import { Inter } from "next/font/google";
-// import "@/app/globals.css";
 'use client'
 import '@/app/globals.css';
 import SideBar from "@/components/Sidebar/sidebar";
@@ -10,6 +8,7 @@ import {useEffect, useState} from "react";
 const page = 0;
 export default function RootLayout({ children, params }) {
     const [SideBlog, setSideBlog] = useState(null);
+
     useEffect(() => {
             const importComponent = async () => {
                 const sideblog = (await import("@/components/Sideblog/Sideblog")).default;
