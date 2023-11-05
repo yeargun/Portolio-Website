@@ -2,7 +2,7 @@
 import styles from "./ThemeGod.module.scss";
 import React, {useEffect, useLayoutEffect, useState} from "react";
 import { setBCS, valueToBCS, useGetBCS, useGetSliderValue } from "./utils";
-import {setLocalStorage, useGetLocalStorage} from "@/hooks/useLocalStorage";
+import {setLocalStorage, useGetLocalStorage} from "hooks/useLocalStorage";
 
 const ThemeGod = () => {
     const [sliderValue, setSliderValue] = useState(useGetSliderValue());

@@ -1,5 +1,5 @@
-import '@/app/globals.css';
-import SideBar from "@/components/Sidebar/sidebar";
+import 'app/globals.css';
+import SideBar from "components/Sidebar/sidebar";
 import Image from "next/image";
 
 const page = 0;

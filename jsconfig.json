@@ -3,6 +3,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "baseUrl": "."
+    "baseUrl": "src"
   }
 }

@@ -1,4 +1,4 @@
-import HomePageMainThing from '@/components/HomepageMainThing/HomepageMainThing'
+import HomePageMainThing from 'components/HomepageMainThing/HomepageMainThing'
 
 export default function Page() {
     return <HomePageMainThing />

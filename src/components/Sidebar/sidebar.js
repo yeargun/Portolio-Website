@@ -9,7 +9,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import ThemeGod from '@/components/ThemeGod/ThemeGod'
+import ThemeGod from 'components/ThemeGod/ThemeGod'
 
 const SideBar = () => (
   <nav className={styles.navBar}>
