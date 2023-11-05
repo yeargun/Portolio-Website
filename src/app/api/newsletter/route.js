@@ -6,7 +6,6 @@ export async function POST(req, res) {
         return res.status(400).json({ error: "Email is required" });
     }
 
-    console.log('smthhh')
     const MailchimpKey = process.env.MAILCHIMP_API_KEY;
     const MailchimpServer = process.env.MAILCHIMP_API_SERVER;
     const MailchimpAudience = process.env.MAILCHIMP_AUDIENCE_ID;

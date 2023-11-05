@@ -1,8 +1,20 @@
 "use client";
 import React, {useState, useRef, useEffect} from "react";
 import styles from './Newsletter.module.scss'
+import useRefWithCallback from "@hooks/useRefWithCallback";
+
+const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+const disableSubmitButtonCallbackOnMount = (ref) => {
+    ref.disabled = true;
+}
+
+const doNone = () => {}
+
 export default function NewsLetter() {
-    const inputRef = useRef(null);
+    const emailRef = useRef(null);
+    const nameRef = useRef(null);
+    const submitButtonRef = useRef(null);
+    const setSubmitButtonRef = useRefWithCallback(disableSubmitButtonCallbackOnMount, doNone)
     const [ReactConfetti, setReactConfetti] = useState(null);
     const [showConfettis, setShowConfettis] = useState(false);
     const [isSubscribedAlready, setIsSubscribedAlready] = useState(false);
@@ -22,7 +34,8 @@ export default function NewsLetter() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    email: inputRef?.current.value,
+                    email: emailRef?.current.value,
+                    name: nameRef?.current?.value
                 }),
             });
             debugger;
@@ -41,8 +54,11 @@ export default function NewsLetter() {
             }, 5500);
         } catch (error) {
             setShowConfettis(false)
-                console.log('error sbuscribing')
         }
+    }
+
+    const handleEmailChange = (e) => {
+        submitButtonRef.current.disabled = !emailPattern.test(e.target.value)
     }
 
     return (
@@ -58,45 +74,60 @@ export default function NewsLetter() {
             )}
             <div className={styles.theWrapper}>
                 <div className={styles.description}>
-                    <h1>
-                        Subscribe to the newsletter!
-                    </h1>
+                    {/*<h1 >*/}
+                    {/*    Subscribe to the newsletter!*/}
+                    {/*</h1>*/}
                     <p>
-                        Receive notifications of <b>high-quality</b> opinions of mine. Lifestyle, computer science
+                        Receive notifications from <b>high-quality</b> opinions of mine. Lifestyle, computer science
                         related.
                     </p>
                 </div>
                 <form
                     onSubmit={ (e) => {
                         e.preventDefault()
-                        handleSubscription().then(r => console.log('asda'))
-                    }}>
+                        handleSubscription()
+                    }}
+                    style={{display: 'flex', alignItems:'center', justifyContent:'space-around'}}
+                >
+                    <div>
+                        <div style={{display: 'flex', marginBottom:'3px', alignItems:'center'}}>
+                            <label htmlFor="email" style={{width:'4rem'}}>email*</label>
+                            <input
+                                type="email"
+                                name="email"
+                                id='email'
+                                className={styles.inputs}
+                                ref={emailRef}
+                                required
+                                onChange={handleEmailChange}
+                            />
+                        </div>
+                        <div style={{display: 'flex',  alignItems:'center'}}>
 
-                    <input
-                        type="email"
-                        name="email"
-                        className={styles.emailInput}
-                        placeholder="Enter your email"
-                        ref={inputRef}
-                        required
-                    />
+                            <label htmlFor="name" style={{width:'4rem'}}>name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                id='name'
+                                className={styles.inputs}
+                                ref={nameRef}
+
+                            />
+                        </div>
+                    </div>
+
                     <button
                         className={styles.subscribeButton}
                         type="submit"
                         disabled={isSubscribedAlready}
+                        ref={(ref) => {
+                            submitButtonRef.current = ref;
+                            setSubmitButtonRef(ref)
+                        }}
                     >
                         {"Subscribe"}
                     </button>
 
-                    {/*{message && (*/}
-                    {/*    <p*/}
-                    {/*        className={`${*/}
-                    {/*            status !== 201 ? "text-red-500" : "text-green-500"*/}
-                    {/*        } pt-4 font-black `}*/}
-                    {/*    >*/}
-                    {/*        {message}*/}
-                    {/*    </p>*/}
-                    {/*)}*/}
                 </form>
             </div>
         </>
