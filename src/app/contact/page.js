@@ -22,7 +22,6 @@ const Page = () => {
       })
       .catch((err) => {
         alert("Failed to send message");
-        console.log(err);
       });
   };
 
