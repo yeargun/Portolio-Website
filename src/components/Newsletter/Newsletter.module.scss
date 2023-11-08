@@ -1,3 +1,5 @@
+@use 'src/app/variables' as v;
+
 .subscribeButton{
   background-color: transparent;
   border-radius: 3px;
@@ -45,4 +47,41 @@
   text-align: center;
   margin-bottom: 8vh;
   margin-top: auto;
+}
+
+@media (max-width: v.$layout-breakpoint-small) {
+  .subscribeButton{
+    border-radius: 3px;
+    color: black;
+    border: 1px solid black;
+    padding: 1.5vw 2vw 1.5vw 2vw;
+    font-size: smaller;
+  }
+
+
+
+  .theWrapper{
+    padding: 1rem;
+    position: fixed;
+    z-index: 5;
+    bottom: 2vh;
+    right: 3vw;
+    max-width: 45vw;
+    max-height: 40vh;
+    border-radius: 1rem;
+
+  }
+
+  .inputs{
+    min-width: 10vw;
+    max-width: 15vw;
+  }
+
+
+  .congratsMessage {
+    text-align: center;
+    margin-bottom: 8vh;
+    margin-top: auto;
+  }
+
 }

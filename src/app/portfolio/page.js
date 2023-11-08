@@ -1,14 +1,27 @@
+'use client';
 import styles from "./Portfolio.module.scss";
 
+const getPdfSizes = (innerWidth, innerHeight) => {
+    if(!innerHeight || !innerWidth ) return undefined;
+    const isMobileDevice = window?.matchMedia("(max-width: 970px)").matches;
+    if(isMobileDevice) return {width: innerHeight*8.5*9/16, height: innerHeight*8.5}
+    else return {width: innerHeight, height: innerHeight}
+}
+
 const Page = () => {
+    const{height, width } = getPdfSizes(window?.innerWidth, window?.innerHeight)
     return (
         <div className={styles.pdfWrap}>
             <object
                 className={styles.pdf}
                 data="/assets/CV.pdf"
-                width="780em"
-                height="990em"
-            ></object>
+                type="application/pdf"
+                width={`${width}px`}
+                height={`${height}px`}
+            >
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                <p className={styles.noPdfOpener}>It appears you don't have a PDF plugin for this browser. No biggie... you can click <a href="/assets/CV.pdf">here</a>  to download the PDF file.</p>
+            </object>
         </div>
     );
 };

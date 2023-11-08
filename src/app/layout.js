@@ -13,7 +13,7 @@ export default function RootLayout({ children, params }) {
     useEffect(() => {
         if(pathName === '/' || pathName.split('/')[1] === 'p'){
             const importComponent = async () => {
-                const sideblog = (await import("@components/Sideblog/Sideblog")).default;
+                const sideblog = (await import("@components/Sideblog/Sideblog")).default; //ssr would have be better
                 setSideBlog(() => sideblog);
             };
             importComponent();

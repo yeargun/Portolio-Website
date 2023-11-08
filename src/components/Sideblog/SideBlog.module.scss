@@ -1,6 +1,8 @@
+@use 'src/app/variables' as v;
+
+
 .postTitleWrapper {
   display: flex;
-  // width: 100%;
   justify-content: space-between;
 }
 
@@ -16,7 +18,6 @@
 }
 
 .postLastUpdated {
-  right: 5px;
   width: 30%;
   display: flex;
   align-items: center;
@@ -92,5 +93,95 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+}
+
+
+@media (max-width: v.$layout-breakpoint-small) {
+  .postTitle {
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 77%;
+
+    text-align: center;
+  }
+
+  .postLastUpdated {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  .sideBlogWrapper {
+    left: 45vw;
+    width: 55vw;
+    height: 100vh;
+    a {
+      font-size: 1.3em;
+    }
+
+    a:link {
+      color: black;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      color: grey;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      font-weight: 600;
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+
+    ul {
+      margin-top: 7em;
+    }
+
+    ul li {
+      margin-bottom: 1em;
+    }
+  }
+
+  .nextPageThing {
+    padding: 10px;
+    bottom: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+    width: auto;
+    font-weight: 700;
+    div {
+      text-decoration: none !important;
+      //color: black !important;
+      cursor: pointer;
+      &:hover {
+        font-weight: 900;
+      }
+    }
+
+    .enterPageNum {
+      background-color: transparent;
+      border: 1px solid black;
+      min-width: 2ch;
+      border-radius: 5px;
+      max-width: 5ch;
+      color: black;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
 }

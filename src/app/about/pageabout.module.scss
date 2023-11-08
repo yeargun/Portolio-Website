@@ -1,5 +1,7 @@
+@use 'src/app/variables' as v;
+
+
 .stageCubeCont {
-  height: 100%;
   left: 70%;
   top: 35%;
   position: absolute;
@@ -92,10 +94,63 @@
   p {
     margin-top: 7px;
     margin-bottom: 7px;
+    font-size: 14px;
+    color: #fff;
   }
 }
 
-.aboutP {
-  font-size: 14px;
-  color: #fff;
+
+
+
+@media (max-width: v.$layout-breakpoint-small) {
+  .stageCubeCont {
+    left: 50%;
+    top: 60%;
+    position: fixed;
+  }
+
+  .cubespinner {
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 50px 50px 0;
+    margin-left: calc(50% - 50px);
+
+    div {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+
+      background: rgba(26, 20, 35, 0.4);
+      text-align: center;
+      font-size: 75px;
+      box-shadow: 0 0 10px 0px rgb(236, 224, 255);
+    }
+  }
+
+
+
+  .textZoneAbout {
+    position: relative;
+    transform: unset;
+    width: 100%;
+    display: block;
+    padding-right: 4vw;
+    padding-top: 4vh;
+
+
+    h1 {
+      font-size: 6rem;
+      color: gold;
+      line-height: normal;
+
+    }
+
+    p {
+      margin-top: 17px;
+        color: #818181;
+    }
+  }
 }

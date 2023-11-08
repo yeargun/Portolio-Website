@@ -1,12 +1,7 @@
+@use 'src/app/variables' as v;
+
+
 .contactForm {
-  @media screen and (max-width: 1200px) {
-    width: 80%;
-  }
-  .flatButton {
-    @media screen and (max-width: 1200px) {
-      background-color: #181818;
-    }
-  }
   padding: 0 30px 0 0px;
   ul {
     padding: initial;
@@ -83,17 +78,11 @@
 }
 
 .mapWrap {
-  @media screen and (max-width: 1200px) {
-    display: none;
-  }
   flex: 1;
   height: 100%;
 }
 
 .textZone {
-  @media screen and (max-width: 1200px) {
-    width: 60%;
-  }
   width: 50%;
   vertical-align: middle;
   display: table-cell;
@@ -136,4 +125,141 @@
       animation-delay: 1.3s;
     }
   }
+}
+
+
+@media (max-width: v.$layout-breakpoint-small) {
+  .contactPage{
+    padding: 1vh 3vw 1vh 3vw;
+  }
+
+
+
+  .contactForm {
+    width: 100%;
+    padding: 0 30px 0 0px;
+    ul {
+      padding: initial;
+      margin: 55px 0 0 0;
+      position: relative !important;
+      li {
+        position: relative !important;
+
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        margin-bottom: 10px;
+        //opacity: 0;
+        overflow: hidden;
+        display: block;
+        clear: both;
+        position: relative;
+        animation: fadeInUp 2s 2s;
+        animation-fill-mode: forwards;
+      }
+
+      li.half {
+        width: 49%;
+
+        margin-left: 2%;
+        float: left;
+        clear: none;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      border: 0;
+      background: #181818;
+      height: 50px;
+      font-size: 16px;
+      color: #fff;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      width: 100%;
+      border: 0;
+      background: #181818;
+      height: 50px;
+      font-size: 16px;
+      color: #818181;
+      padding: 20px;
+      box-sizing: border-box;
+      min-height: 170px;
+    }
+
+    .flatButton {
+      color: #ffd700;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-decoration: none;
+      padding: 8px 10px;
+      border: 1px solid #ffd700;
+      border-radius: 4px;
+      background: 0 0;
+      text-transform: uppercase;
+      float: right;
+      text-align: center;
+      margin-right: 10px;
+    }
+  }
+
+  .mapWrap {
+   display: none;
+  }
+
+  .textZone {
+    width: 100%;
+    padding: 4vh 15px 0 0;
+    color: #818181;
+    .description {
+      color: #818181;
+    }
+  }
+  .textAnimateHover {
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .contactPage {
+    height: 100%;
+    left: 15px;
+    align-items: center;
+    h1 {
+      font-size: 53px;
+      font-family: "Coolvetica";
+      color: #ffd700;
+      font-weight: 400;
+      margin-top: 0;
+      position: relative;
+      margin-bottom: 40px;
+      left: -10px;
+    }
+    p {
+      font-size: 14px;
+      color: #fff;
+      font-family: sans-serif;
+      font-weight: 300;
+      max-width: fit-content;
+      animation: pulse 1s;
+      &:nth-of-type(1) {
+        animation-delay: 1.1s;
+      }
+      &:nth-of-type(2) {
+        animation-delay: 1.2s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 1.3s;
+      }
+    }
+  }
+
 }

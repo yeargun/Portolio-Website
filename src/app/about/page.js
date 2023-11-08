@@ -48,12 +48,12 @@ const About = () => {
             idx={15}
           />
         </h1>
-        <p className={styles.aboutP}>I like to get things done.</p>
-        <p className={styles.aboutP}>
+        <p >I like to get things done.</p>
+        <p  >
           Chill and confident person. I enjoy spending time with my friends and
           family.
         </p>
-        <p className={styles.aboutP}>
+        <p  >
           I like gym, ski, coffee, humuor, sometimes I do nerd sh*t. I am quite
           an interesting personality in that sense.
         </p>

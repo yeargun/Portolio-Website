@@ -15,11 +15,15 @@ export default function NewsLetter() {
     const nameRef = useRef(null);
     const submitButtonRef = useRef(null);
     const setSubmitButtonRef = useRefWithCallback(disableSubmitButtonCallbackOnMount, doNone)
+
     const [ReactConfetti, setReactConfetti] = useState(null);
-    const [showConfettis, setShowConfettis] = useState(false);
+
     const [showCongratulations, setShowCongratulations] = useState(false);
     const [isSubscribedAlready, setIsSubscribedAlready] = useState(false);
+    const [isWaitingSubsRes, setIsWaitingSubsRes] = useState(false);
     const [showAnim, setShowAnim] = useState(false);
+
+
     useEffect(() => {
         import("react-confetti").then(module => {
             setReactConfetti(() => module.default)
@@ -29,6 +33,8 @@ export default function NewsLetter() {
     const handleSubscription = async () => {
 
         try {
+            setIsWaitingSubsRes(true)
+
             const response = await fetch("/api/newsletter", {
                 method: "POST",
                 headers: {
@@ -39,25 +45,22 @@ export default function NewsLetter() {
                     name: nameRef?.current?.value
                 }),
             });
-            debugger;
+
             const datas = await response.json();
+
+            setIsWaitingSubsRes(false)
             setIsSubscribedAlready(true);
-            setShowConfettis(true)
             setShowAnim(true)
-            setShowConfettis(true)
-            setShowCongratulations(true);
+            setShowCongratulations(true)
             setTimeout(() => {
-                setShowConfettis(false);
                 setShowCongratulations(false);
-
             }, 6300)
-
             setTimeout(() => {
                 setShowAnim(false);
-
             }, 3500);
         } catch (error) {
-            setShowConfettis(false)
+            setShowCongratulations(false)
+            setIsWaitingSubsRes(false)
         }
     }
 
@@ -67,7 +70,7 @@ export default function NewsLetter() {
 
     if(isSubscribedAlready) return <>
         {showCongratulations && <h3 className={styles.congratsMessage}>Congrats! Successfully subscribed</h3>}
-        { ReactConfetti && showConfettis &&(
+        { ReactConfetti && showCongratulations &&(
             <ReactConfetti
                 width={window?.innerWidth}
                 height={window?.innerHeight}
@@ -124,7 +127,7 @@ export default function NewsLetter() {
                     <button
                         className={styles.subscribeButton}
                         type="submit"
-                        disabled={isSubscribedAlready}
+                        disabled={isSubscribedAlready || isWaitingSubsRes}
                         ref={(ref) => {
                             submitButtonRef.current = ref;
                             setSubmitButtonRef(ref)
