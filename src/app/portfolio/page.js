@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import styles from "./Portfolio.module.scss";
 
 const getPdfSizes = (innerWidth, innerHeight) => {
