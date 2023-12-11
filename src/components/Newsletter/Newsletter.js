@@ -45,7 +45,8 @@ export default function NewsLetter() {
                     name: nameRef?.current?.value
                 }),
             });
-
+            if(typeof navigator?.vibrate === 'function')
+                navigator?.vibrate([200,100,200])
             const datas = await response.json();
 
             setIsWaitingSubsRes(false)

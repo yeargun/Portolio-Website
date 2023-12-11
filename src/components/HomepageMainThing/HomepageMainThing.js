@@ -121,7 +121,6 @@ export default function Page() {
                 <Link href="/contact" className={styles.flatButton}>
                     CONTACT ME
                 </Link>
-
             </div>
         </main>
     );

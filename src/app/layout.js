@@ -32,7 +32,7 @@ export default function RootLayout({ children, params }) {
 
       <body style={{width:'100%', height: '100%', position:'absolute', display: "flex", margin: '0'}}>
       <SideBar />
-       <Image src='/images/back back2.jpg' width={555} height={555} style={{
+       <Image src='/images/back.avif' width={555} height={555} style={{
            position:'absolute',
            left:'3vw',
            height:'100%',

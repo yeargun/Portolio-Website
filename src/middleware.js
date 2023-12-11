@@ -11,7 +11,6 @@ export function middleware(req) {
 
     // Check the viewport
     const viewport = device.type === 'mobile' ? 'mobile' : 'desktop'
-    console.log('viewport this asf', viewport)
     // Update the expected url
     // req.nextUrl.pathname = `_viewport/${viewport}`
     //
