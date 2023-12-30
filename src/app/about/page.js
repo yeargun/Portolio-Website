@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./pageabout.module.scss";
 import AnimatedLetters from "@components/AnimatedLetters/AnimatedLetters";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HardSpinningCube = () => {
   return (
@@ -39,27 +39,36 @@ const HardSpinningCube = () => {
 
 const About = () => {
   return (
-    <>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <meta httpEquiv="Accept-CH" content="Width, Downlink, Sec-CH-UA" />
       <div className={styles.textZoneAbout}>
-        <h1 >
-           <AnimatedLetters
+        <h1>
+          <AnimatedLetters
             letterClass="textAnimate"
             strArray={["A", "b", "o", "u", "t", " ", "m", "e"]}
             idx={15}
           />
         </h1>
-        <p >I like to get things done.</p>
-        <p  >
+        <p>I like to get things done.</p>
+        <p>
           Chill and confident person. I enjoy spending time with my friends and
           family.
         </p>
-        <p  >
+        <p>
           I like gym, ski, coffee, humuor, sometimes I do nerd sh*t. I am quite
           an interesting personality in that sense.
         </p>
       </div>
-       <HardSpinningCube />
-    </>
+      <HardSpinningCube />
+    </div>
   );
 };
 

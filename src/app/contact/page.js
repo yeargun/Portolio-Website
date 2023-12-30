@@ -5,8 +5,8 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const Page = () => {
-    const [letterClass, setLetterClass] = useState("textAnimate");
-    const refForm = useRef();
+  const [letterClass, setLetterClass] = useState("textAnimate");
+  const refForm = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ const Page = () => {
       }}
     >
       <div className={styles.textZone}>
-         <h1 className={styles.nonSelectable}>
+        <h1 className={styles.nonSelectable}>
           <AnimatedLetters
             letterClass={letterClass}
             strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
