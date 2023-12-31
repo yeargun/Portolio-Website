@@ -1,4 +1,4 @@
-@use 'src/app/variables' as v;
+@use "src/app/variables" as v;
 
 .blogPage {
   background-color: white;
@@ -70,8 +70,8 @@
 }
 
 .editThisPageButton {
-  letter-spacing: 0.8rem;
-  word-spacing: 2.8rem;
+  letter-spacing: 0.23rem;
+  word-spacing: 0.5rem;
   text-align: center;
   padding: 10px 10.5% 10px 10.5%;
   outline: 1px solid black;
@@ -92,10 +92,7 @@
   color: white;
 }
 
-
 @media (max-width: v.$layout-breakpoint-small) {
-
-
   .blogPage {
     background-color: white;
     width: 100%;
@@ -104,7 +101,6 @@
     padding: 0;
     overflow-y: auto;
     overflow-x: hidden;
-
   }
 
   .blogTitle {
@@ -155,5 +151,4 @@
     padding: 10px 4vw 10px 4vw;
     font-size: medium;
   }
-
 }

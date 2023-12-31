@@ -1,28 +1,27 @@
-@use 'src/app/variables' as v;
+@use "src/app/variables" as v;
 
-.subscribeButton{
+.subscribeButton {
   background-color: transparent;
   border-radius: 3px;
   color: black;
   border: 1px solid black;
   padding: 1.2rem;
   cursor: pointer;
-  &:hover{
+  &:hover {
     background-color: black;
-    color:whitesmoke;
+    color: whitesmoke;
   }
-  &:disabled{
+  &:disabled {
     background-color: #a7a7a7;
     color: white;
     border: none;
     cursor: default;
-    &:hover{
-
+    &:hover {
     }
   }
 }
 
-.theWrapper{
+.theWrapper {
   padding: 2rem;
   position: fixed;
   z-index: 5;
@@ -33,13 +32,11 @@
   border-radius: 2rem;
   background-color: whitesmoke;
   box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
-
 }
 
-.inputs{
+.inputs {
   width: 13rem;
 }
-
 
 .congratsMessage {
   text-align: center;
@@ -48,14 +45,12 @@
 }
 
 @media (max-width: v.$layout-breakpoint-small) {
-  .subscribeButton{
+  .subscribeButton {
     padding: 1.5vw 2vw 1.5vw 2vw;
     font-size: smaller;
   }
 
-
-
-  .theWrapper{
+  .theWrapper {
     padding: 1rem;
     bottom: 2vh;
     right: 3vw;
@@ -64,7 +59,7 @@
     border-radius: 1rem;
   }
 
-  .inputs{
+  .inputs {
     min-width: 10vw;
     max-width: 15vw;
   }
