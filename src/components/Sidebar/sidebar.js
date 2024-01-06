@@ -1,6 +1,6 @@
 "use client";
 import styles from "./Sidebar.module.scss";
-import Link from 'next/link'
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -9,22 +9,35 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import ThemeGod from 'components/ThemeGod/ThemeGod'
+import ThemeGod from "components/ThemeGod/ThemeGod";
 
 const SideBar = () => (
   <nav className={styles.navBar}>
     <ThemeGod />
     <div className={styles.hoverable}>
-      <Link exact="true" activeclassname="active" className={styles.homeLink} href="/">
+      <Link
+        exact="true"
+        activeclassname="active"
+        className={styles.homeLink}
+        href="/"
+      >
         <FontAwesomeIcon icon={faHome} color="#ffffff" />
       </Link>
       <Link activeclassname="active" className={styles.aboutLink} href="/about">
         <FontAwesomeIcon icon={faUser} color="#ffffff" />
       </Link>
-      <Link activeclassname="active" className={styles.portfolioLink} href="/portfolio">
+      <Link
+        activeclassname="active"
+        className={styles.portfolioLink}
+        href="/portfolio"
+      >
         <FontAwesomeIcon icon={faSuitcase} color="#ffffff" />
       </Link>
-      <Link activeclassname="active" className={styles.contactLink} href="/contact">
+      <Link
+        activeclassname="active"
+        className={styles.contactLink}
+        href="/contact"
+      >
         <FontAwesomeIcon icon={faEnvelope} color="#ffffff" />
       </Link>
     </div>

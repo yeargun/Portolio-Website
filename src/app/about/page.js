@@ -48,7 +48,6 @@ const About = () => {
         alignItems: "center",
       }}
     >
-      <meta httpEquiv="Accept-CH" content="Width, Downlink, Sec-CH-UA" />
       <div className={styles.textZoneAbout}>
         <h1>
           <AnimatedLetters

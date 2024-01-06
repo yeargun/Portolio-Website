@@ -27,6 +27,7 @@ export default function RootLayout({ children, params }) {
         <title>yeargun</title>
         <meta property="og:title" content="yeargun" />
         <meta property="og:description" content="yeargun's personal blog" />
+        <meta httpEquiv="Accept-CH" content="Width, Downlink, Sec-CH-UA" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
 

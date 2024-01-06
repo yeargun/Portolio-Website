@@ -1,4 +1,4 @@
-@use 'src/app/variables' as v;
+@use "src/app/variables" as v;
 
 .navBar {
   display: flex;
@@ -9,7 +9,7 @@
   height: 100%;
   width: 4vw;
   background-color: black;
-  justify-content: center;
+  justify-content: space-between;
   z-index: 5;
   margin-right: 40px;
   .hoverable {
@@ -49,8 +49,6 @@
         -webkit-transition: all 0.3s ease-out;
         transition: all 0.3s ease-out;
       }
-
-
     }
 
     a.homeLink {
@@ -86,8 +84,9 @@
 
   .socialNavButtonsWrapper {
     display: flex;
-    position: absolute;
-    bottom: 20px;
+    // position: absolute;
+    float: inline-end;
+    margin-bottom: 20px;
     width: 4vw;
     align-items: center;
     flex-direction: column;

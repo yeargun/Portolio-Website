@@ -26,6 +26,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.0.4",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
     "sass": "^1.69.5"

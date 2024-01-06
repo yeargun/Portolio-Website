@@ -14,6 +14,7 @@ export function middleware(req) {
   // Update the expected url
   // req.nextUrl.pathname = `_viewport/${viewport}`
   //
-  // // Return rewrited response
+
+  // return response;
   return NextResponse.rewrite(req.nextUrl);
 }
