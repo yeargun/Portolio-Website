@@ -30,6 +30,7 @@ const SideBlog = ({ currentPage = undefined, NewsletterComp }) => {
 
             linkElement.rel = "prefetch";
             linkElement.href = url;
+            linkElement.as = "fetch";
             linkElement.setAttribute("key", url);
             toBeAppendedElements.push(linkElement);
           }
