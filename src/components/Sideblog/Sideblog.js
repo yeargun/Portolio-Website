@@ -23,8 +23,8 @@ const SideBlog = ({ currentPage = undefined, NewsletterComp }) => {
         setFileData(fileData);
         fileData?.slice(currPage * 10, currPage * 10 + 10)?.map((val, ind) => {
           if (val) {
-            let date = val.substring(0, 11);
-            let url = "/shut/" + date.replace(/\./g, "");
+            let date = val.substring(0, 10);
+            let url = "/shut/" + date.replace(/\./g, "") + ".md";
             let name = val.substring(11);
 
             const linkElement = document.createElement("link");
