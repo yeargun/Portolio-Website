@@ -1,5 +1,4 @@
-@use 'src/app/variables' as v;
-
+@use "src/app/(main)/variables" as v;
 
 .postTitleWrapper {
   display: flex;
@@ -95,7 +94,6 @@
     margin: 0;
   }
 }
-
 
 @media (max-width: v.$layout-breakpoint-small) {
   .postTitle {
