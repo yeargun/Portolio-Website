@@ -6,14 +6,20 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useGetLocalStorage } from "@hooks/useLocalStorage";
 import { useGetBCS } from "@components/ThemeGod/utils";
+import LoadingSpinner from "@components/LoadingSpinner/LoadingSpinner";
 
 const blogPostId =
   typeof window === "undefined"
     ? undefined
     : window.location.pathname.split("/")[2];
 
+const fetchUrl = "/blogPosts/" + blogPostId + ".md";
+
 const PageWithComments = ({ BlogpostContent = () => <></> }) => {
   const [stargazerCount, setStargazerCount] = useState(null);
+  const [text, setText] = useState("<div></div>");
+  const [postName, setPostName] = useState();
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
   const theme = useGetLocalStorage("theme");
   const BCS = useGetBCS();
@@ -28,10 +34,20 @@ const PageWithComments = ({ BlogpostContent = () => <></> }) => {
 
   //this fetch makes me very mad. Bad design but yeah whatever
   useLayoutEffect(() => {
+    fetch(fetchUrl)
+      .then((res) => res.text())
+      .then((text) => {
+        setText(text.substring(text.indexOf("\n") + 1));
+        setPostName(text.substring(0, text.indexOf("\n")));
+        console.log("is loaded", text);
+        // setLoading(false);
+      });
     fetch("https://api.github.com/repos/yeargun/Portolio-Website")
       .then((res) => res.json())
       .then((json) => setStargazerCount(json?.stargazers_count));
   }, []);
+
+  if (loading) return <LoadingSpinner />;
 
   return (
     <div className={styles.blogPage}>
@@ -47,7 +63,7 @@ const PageWithComments = ({ BlogpostContent = () => <></> }) => {
       >
         <path d="M63.94,24.28a14.28,14.28,0,0,0-20.36-20L4.1,44.42a14.27,14.27,0,0,0,0,20l38.69,39.35a14.27,14.27,0,0,0,20.35-20L48.06,68.41l60.66-.29a14.27,14.27,0,1,0-.23-28.54l-59.85.28,15.3-15.58Z" />
       </svg>
-      <BlogpostContent />
+      <BlogpostContent text={text} postName={postName} />
       <div className={styles.editStarWrapper}>
         <a
           className={styles.editThisPageButton}
