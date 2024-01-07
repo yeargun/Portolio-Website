@@ -40,7 +40,7 @@ const PageWithComments = ({ BlogpostContent = () => <></> }) => {
         setText(text.substring(text.indexOf("\n") + 1));
         setPostName(text.substring(0, text.indexOf("\n")));
         console.log("is loaded", text);
-        // setLoading(false);
+        setLoading(false);
       });
     fetch("https://api.github.com/repos/yeargun/Portolio-Website")
       .then((res) => res.json())
