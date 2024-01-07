@@ -2,22 +2,26 @@
 import "./globals.css";
 import SideBar from "@components/Sidebar/sidebar";
 import Image from "next/image";
-import SideBlog from "@components/Sideblog/Sideblog";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const page = 0;
 export default function RootLayout({ children, params }) {
   const [SideBlog, setSideBlog] = useState(null);
+  const [NewsletterComp, setNewsletterComp] = useState(null);
   const pathName = usePathname();
   useEffect(() => {
     if (pathName === "/" || pathName.split("/")[1] === "p") {
-      const importComponent = async () => {
+      const importSideBlogComp = async () => {
         const sideblog = (await import("@components/Sideblog/Sideblog"))
           .default; //ssr would have be better
         setSideBlog(() => sideblog);
       };
-      importComponent();
+      importSideBlogComp().then(() => {
+        import("@components/Newsletter/Newsletter").then((module) => {
+          setNewsletterComp(() => module.default);
+        });
+      });
     }
   }, [pathName]);
 
@@ -60,7 +64,9 @@ export default function RootLayout({ children, params }) {
           quality={90}
           priority={true}
         />
-        {(pathName === "/" || pathName === "/p") && SideBlog && <SideBlog />}
+        {(pathName === "/" || pathName === "/p") && SideBlog && (
+          <SideBlog NewsletterComp={NewsletterComp} />
+        )}
         {children}
       </body>
     </html>

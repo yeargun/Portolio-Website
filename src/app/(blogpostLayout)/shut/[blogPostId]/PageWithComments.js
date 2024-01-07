@@ -1,38 +1,18 @@
 "use client";
 import styles from "./BlogPost.module.scss";
 import { useEffect, useLayoutEffect, useState } from "react";
-import { marked } from "marked";
 import "giscus";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useGetLocalStorage } from "@hooks/useLocalStorage";
 import { useGetBCS } from "@components/ThemeGod/utils";
 
-const calculateReadingTime = (daText) => {
-  const wordsPerMinute = 200;
-  const plainText = daText
-    .replace(/<[^>]+>/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-  const wordCount = plainText.split(" ").length;
-  return Math.ceil(wordCount / wordsPerMinute);
-};
-
 const blogPostId =
   typeof window === "undefined"
     ? undefined
     : window.location.pathname.split("/")[2];
-const fetchUrl = "/blogPosts/" + blogPostId + ".md";
-const update =
-  blogPostId?.substring(0, 2) +
-  "." +
-  blogPostId?.substring(2, 4) +
-  "." +
-  blogPostId?.substring(4);
 
-const BlogPost = () => {
-  const [text, setText] = useState("<div></div>");
-  const [postName, setPostName] = useState();
+const PageWithComments = ({ BlogpostContent = () => <></> }) => {
   const [stargazerCount, setStargazerCount] = useState(null);
   const router = useRouter();
   const theme = useGetLocalStorage("theme");
@@ -48,13 +28,6 @@ const BlogPost = () => {
 
   //this fetch makes me very mad. Bad design but yeah whatever
   useLayoutEffect(() => {
-    fetch(fetchUrl)
-      .then((res) => res.text())
-      .then((text) => {
-        setText(text.substring(text.indexOf("\n") + 1));
-        setPostName(text.substring(0, text.indexOf("\n")));
-      });
-
     fetch("https://api.github.com/repos/yeargun/Portolio-Website")
       .then((res) => res.json())
       .then((json) => setStargazerCount(json?.stargazers_count));
@@ -74,18 +47,7 @@ const BlogPost = () => {
       >
         <path d="M63.94,24.28a14.28,14.28,0,0,0-20.36-20L4.1,44.42a14.27,14.27,0,0,0,0,20l38.69,39.35a14.27,14.27,0,0,0,20.35-20L48.06,68.41l60.66-.29a14.27,14.27,0,1,0-.23-28.54l-59.85.28,15.3-15.58Z" />
       </svg>
-      <h1 className={styles.blogTitle}>{postName}</h1>
-      <div className={styles.extraInfo}>
-        <h4 className={styles.estimatedTime}>
-          {text ? calculateReadingTime(text) : "..."} mins
-        </h4>
-        <h4 className={styles.lastUpdate}>Last update: {update}</h4>
-      </div>
-      <hr />
-      <div
-        className={styles.blogPostContent}
-        dangerouslySetInnerHTML={{ __html: marked(text) }}
-      ></div>
+      <BlogpostContent />
       <div className={styles.editStarWrapper}>
         <a
           className={styles.editThisPageButton}
@@ -143,4 +105,4 @@ const BlogPost = () => {
   );
 };
 
-export default BlogPost;
+export default PageWithComments;
