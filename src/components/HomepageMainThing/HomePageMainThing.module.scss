@@ -12,7 +12,7 @@
     white-space: nowrap;
 
     h1 {
-      color: #fff;
+      color: #000000;
       font-size: 8vw;
       @media screen and (min-width: 900px) {
         font-size: 70px;
@@ -46,22 +46,22 @@
     }
 
     .flatButton {
-      color: #ffd700;
+      color: black;
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 4px;
       font-family: sans-serif;
       text-decoration: none;
       padding: 10px 18px;
-      border: 1px solid #ffd700;
+      border: 1px solid black;
       margin-top: 25px;
       float: left;
       animation: fadeInAnimation 1s 1.8s backwards;
       white-space: nowrap;
 
       &:hover {
-        background: #ffd700;
-        color: #333;
+        background: #000000;
+        color: white;
       }
     }
   }

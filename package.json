@@ -17,13 +17,16 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "github:fortawesome/react-fontawesome",
+    "@react-three/drei": "^9.93.0",
     "darkreader": "^4.9.67",
     "giscus": "^1.3.0",
     "marked": "^9.1.5",
     "next": "14.0.1",
     "react": "^18",
     "react-confetti": "^6.1.0",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.0.4",

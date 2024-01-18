@@ -29,7 +29,7 @@ export default function RootLayout({ children, params }) {
         }}
       >
         <SideBar />
-        <Image
+        {/* <Image
           src="/images/back.avif"
           width={555}
           height={555}
@@ -47,7 +47,7 @@ export default function RootLayout({ children, params }) {
           alt={""}
           quality={90}
           priority={true}
-        />
+        /> */}
         {SideBlog && <SideBlog />}
         {children}
       </body>

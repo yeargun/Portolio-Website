@@ -33,6 +33,7 @@ export default function RootLayout({ children, params }) {
         <meta property="og:description" content="yeargun's personal blog" />
         <meta httpEquiv="Accept-CH" content="Width, Downlink, Sec-CH-UA" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="preload" href="/assets/CV.pdf" />
       </head>
 
       <body
@@ -45,7 +46,7 @@ export default function RootLayout({ children, params }) {
         }}
       >
         <SideBar />
-        <Image
+        {/* <Image
           src="/images/back.avif"
           width={555}
           height={555}
@@ -63,7 +64,7 @@ export default function RootLayout({ children, params }) {
           alt={""}
           quality={90}
           priority={true}
-        />
+        /> */}
         {(pathName === "/" || pathName === "/p") && SideBlog && (
           <SideBlog NewsletterComp={NewsletterComp} />
         )}

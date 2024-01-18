@@ -1,16 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import AnimatedLetters from "@components/AnimatedLetters/AnimatedLetters";
 import styles from "./HomePageMainThing.module.scss";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import React, { useRef, useState } from "react";
+import {
+  Canvas,
+  useFrame,
+  useLoader,
+  useThree,
+  extend,
+} from "react-three-fiber";
+import { OrbitControls, Box } from "@react-three/drei";
 
-const hardFontSizer = () => {
-  const sizes = Array(6);
-  for (let i = 0; i < 6; i++) {
-    sizes[i] = (Math.random() * 15.12 + 8.02).toFixed(2);
-  }
-  return sizes;
-};
+extend({ OrbitControls });
 
 const nameArray = ["y", "e", "a", "r", "g", "u", "n"];
 const jobArray = [
@@ -34,19 +37,104 @@ const jobArray = [
 ];
 const letterClass = "textAnimate";
 
-export default function Page() {
-  const [fontSizes, setFontSizes] = useState([...hardFontSizer()]);
-  useEffect(() => {
-    const loop1 = setInterval(() => setFontSizes([...hardFontSizer()]), 3000);
-    hardFontSizer();
+// Custom Three.js component for loading and displaying the 3D model
+const Model = ({ onModelLoad }) => {
+  const gltfRef = useRef();
 
-    return () => {
-      clearInterval(loop1);
-    };
-  }, []);
+  useFrame(() => {
+    if (gltfRef.current) {
+      gltfRef.current.scale.set(3.2, 3.2, 3.2); // Adjust the scale as needed
+      gltfRef.current.position.y = -0.5;
+      gltfRef.current.position.x = 0.15;
+    }
+  });
+
+  const gltf = useLoader(
+    GLTFLoader,
+    "/images/me3dlowq.glb",
+    undefined,
+    (loader) => {
+      if (onModelLoad) {
+        onModelLoad();
+      }
+    }
+  );
+
+  return <primitive ref={gltfRef} object={gltf.scene} />;
+};
+
+export default function Page() {
+  const [assetIsLoaded, setAssetIsLoaded] = useState(false);
+  const handleModelLoad = () => {
+    setAssetIsLoaded(true);
+  };
 
   return (
     <main className={styles.homePage}>
+      <section
+        style={{
+          position: "absolute",
+          height: "50%",
+          width: "50%",
+          left: "20%",
+          top: "20%",
+          display: "block",
+        }}
+      >
+        {assetIsLoaded && (
+          <h3
+            style={{
+              position: "absolute",
+              zIndex: "998",
+              // textAlign: "center",
+              color: "black",
+              fontSize: "21px",
+              margin: "0",
+            }}
+          >
+            something uncool <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            god I hate the way this looks like <br />
+            check this out <br />
+            something uncool
+            {/* god I hate the way this looks <br />
+          god I hate the way this looks <br /> */}
+          </h3>
+        )}
+        <img
+          src={
+            assetIsLoaded
+              ? "/images/removedbarcel2.avif"
+              : "/images/barcel2.jpeg"
+          }
+          style={{ position: "absolute" }}
+          width="330px"
+          alt={""}
+          quality={90}
+          priority={true}
+        />
+        <Canvas
+          style={{ width: "330px", zIndex: "999", height: "454px" }}
+          camera={{ position: [0, 0, 5] }}
+        >
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <Model onModelLoad={handleModelLoad} />
+
+          <OrbitControls enableDamping enablePan enableRotate enableZoom />
+        </Canvas>
+      </section>
       <div className={styles.textZone}>
         <h1 className={styles.nonSelectable}>
           <span className={styles.letterClass}>H</span>
@@ -70,54 +158,7 @@ export default function Page() {
             idx={22}
           />
         </h1>
-        <h2 className={styles.nonSelectable}>
-          Spring Boot | Next.js | Node.js | ML |
-          <span
-            style={{
-              marginLeft: "5px",
-              color: "blueviolet",
-              fontSize: `${fontSizes[0]}px`,
-            }}
-            id="text0"
-          >
-            U
-          </span>
-          <span
-            id="text1"
-            style={{
-              color: "red",
-              fontSize: `${fontSizes[1]}px`,
-              marginLeft: "5px",
-            }}
-          >
-            I
-          </span>
-          <span
-            id="text2"
-            style={{ color: "whitesmoke", fontSize: `${fontSizes[2]}px` }}
-          >
-            /
-          </span>
-          <span
-            id="text3"
-            style={{ color: "greenyellow", fontSize: `${fontSizes[3]}px` }}
-          >
-            U
-          </span>
-          <span
-            id="text5"
-            style={{
-              color: "yellow",
-              fontSize: `${fontSizes[5]}px`,
-            }}
-          >
-            X
-          </span>
-          <span style={{ fontSize: "8px", letterSpacing: "initial" }}>
-            (might be real funny)
-          </span>
-          <span style={{ color: "#0000", fontSize: "25px" }}>yeargun</span>
-        </h2>
+        <h2 className={styles.nonSelectable}>ML | Cloud Native Apps | UI/UX</h2>
         <Link href="/contact" className={styles.flatButton}>
           CONTACT ME
         </Link>

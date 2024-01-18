@@ -10,32 +10,32 @@ import styles from "./pageabout.module.scss";
 import AnimatedLetters from "@components/AnimatedLetters/AnimatedLetters";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const HardSpinningCube = () => {
-  return (
-    <div className={styles.stageCubeCont}>
-      <div className={styles.cubespinner}>
-        <div className={styles.face1}>
-          <FontAwesomeIcon icon={faPython} color="#DD0031" />
-        </div>
-        <div className={styles.face2}>
-          <FontAwesomeIcon icon={faJava} color="#F06529" />
-        </div>
-        <div className={styles.face3}>
-          <FontAwesomeIcon icon={faNodeJs} color="#28A4D9" />
-        </div>
-        <div className={styles.face4}>
-          <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-        </div>
-        <div className={styles.face5}>
-          <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
-        </div>
-        <div className={styles.face6}>
-          <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
-        </div>
-      </div>
-    </div>
-  );
-};
+// const HardSpinningCube = () => {
+//   return (
+//     <div className={styles.stageCubeCont}>
+//       <div className={styles.cubespinner}>
+//         <div className={styles.face1}>
+//           <FontAwesomeIcon icon={faPython} color="#DD0031" />
+//         </div>
+//         <div className={styles.face2}>
+//           <FontAwesomeIcon icon={faJava} color="#F06529" />
+//         </div>
+//         <div className={styles.face3}>
+//           <FontAwesomeIcon icon={faNodeJs} color="#28A4D9" />
+//         </div>
+//         <div className={styles.face4}>
+//           <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+//         </div>
+//         <div className={styles.face5}>
+//           <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+//         </div>
+//         <div className={styles.face6}>
+//           <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const About = () => {
   return (
@@ -66,7 +66,7 @@ const About = () => {
           an interesting personality in that sense.
         </p>
       </div>
-      <HardSpinningCube />
+      {/* <HardSpinningCube /> */}
     </div>
   );
 };
