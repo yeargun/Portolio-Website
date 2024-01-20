@@ -1,3 +1,4 @@
+"use client";
 import styles from "./pageabout.module.scss";
 import AnimatedLetters from "@components/AnimatedLetters/AnimatedLetters";
 
@@ -100,17 +101,17 @@ const About = () => {
           {process.env.NODE_ENV !== "development" && (
             <>
               <li>
+                you, your opinions and your values matter <u>a lot</u>
+              </li>
+              <li>
                 your bandwith is{" "}
-                {navigator ? navigator?.connection?.downlink : "-"} +-
+                {navigator ? navigator?.connection?.downlink : "-"}mbps +-
               </li>
               <li>
                 your ping is {navigator ? navigator?.connection?.rtt : "-"} +-
               </li>
             </>
           )}
-          <li>
-            you, your opinions and values matter <u>a lot</u>
-          </li>
         </ul>
       </div>
       {/* <HardSpinningCube /> */}
