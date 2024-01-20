@@ -77,7 +77,7 @@ const About = () => {
           </li>
           <li>it & infra & mlops not much experience but ggs to the folks</li>
         </ul>
-        <h3>
+        {/* <h3>
           I read, think, do on the following <u>non-tech</u> stuf
         </h3>
         <ul>
@@ -112,7 +112,7 @@ const About = () => {
               </li>
             </>
           )}
-        </ul>
+        </ul> */}
       </div>
       {/* <HardSpinningCube /> */}
     </div>
