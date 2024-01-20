@@ -42,13 +42,7 @@ const Page = () => {
             idx={15}
           />
         </h1>
-        <p className={styles.description}>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          As of now, I'm more focused on backend, system design and cloud native
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          applications but at the end of the day I'm interested in solving
-          problems.
-        </p>
+        <p className={styles.description}>sofware</p>
         <div className={styles.contactForm}>
           <form onSubmit={sendEmail}>
             <ul>

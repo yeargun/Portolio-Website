@@ -73,8 +73,8 @@ export default function RootLayout({ children, params }) {
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Your Website",
+          "@type": "stuf24 Studio",
+          name: "Argun BASGAN AHAH",
           url: "https://yeargun.dev",
           sameAs: [
             "https://www.instagram.com/yeargun",
