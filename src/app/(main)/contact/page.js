@@ -1,11 +1,10 @@
 "use client";
 import AnimatedLetters from "@components/AnimatedLetters/AnimatedLetters";
 import styles from "./contact.module.scss";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const Page = () => {
-  const [letterClass, setLetterClass] = useState("textAnimate");
   const refForm = useRef();
 
   const sendEmail = (e) => {
@@ -38,7 +37,7 @@ const Page = () => {
       <div className={styles.textZone}>
         <h1 className={styles.nonSelectable}>
           <AnimatedLetters
-            letterClass={letterClass}
+            letterClass="textAnimate"
             strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
             idx={15}
           />

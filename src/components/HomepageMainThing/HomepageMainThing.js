@@ -85,7 +85,7 @@ export default function Page() {
           <h3
             style={{
               position: "absolute",
-              zIndex: "998",
+              zIndex: "1",
               // textAlign: "center",
               color: "black",
               fontSize: "21px",
@@ -108,8 +108,6 @@ export default function Page() {
             god I hate the way this looks like <br />
             check this out <br />
             something uncool
-            {/* god I hate the way this looks <br />
-          god I hate the way this looks <br /> */}
           </h3>
         )}
         <img
@@ -124,8 +122,29 @@ export default function Page() {
           quality={90}
           priority={true}
         />
+
+        {assetIsLoaded && (
+          <description
+            style={{
+              width: "330px",
+              textAlign: "center",
+              position: "absolute",
+              top: "480px",
+            }}
+          >
+            made with{" "}
+            <a href="https://dreamgaussian.github.io/" target="_blank">
+              this
+            </a>
+          </description>
+        )}
         <Canvas
-          style={{ width: "330px", zIndex: "999", height: "454px" }}
+          style={{
+            width: "330px",
+            zIndex: "999",
+            height: "454px",
+            zIndex: "1",
+          }}
           camera={{ position: [0, 0, 5] }}
         >
           <ambientLight />
