@@ -70,6 +70,27 @@ export default function RootLayout({ children, params }) {
         )}
         {children}
       </body>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Your Website",
+          url: "https://yeargun.dev",
+          sameAs: [
+            "https://www.instagram.com/yeargun",
+            "https://twitter.com/yeargun24",
+            "https://www.linkedin.com/in/yeargun",
+          ],
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: "https://yeargun.dev",
+            },
+            "query-input": "required name=search_term_string",
+          },
+        })}
+      </script>
     </html>
   );
 }
