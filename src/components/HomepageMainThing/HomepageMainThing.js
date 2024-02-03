@@ -12,6 +12,7 @@ import {
   extend,
 } from "react-three-fiber";
 import { OrbitControls, Box } from "@react-three/drei";
+import {openHtmlContent} from "@components/HomepageMainThing/util";
 
 extend({ OrbitControls });
 
@@ -132,10 +133,13 @@ export default function Page() {
               top: "480px",
             }}
           >
-            made with{" "}
-            <a href="https://dreamgaussian.github.io/" target="_blank">
-              this
-            </a>
+           {/*   <a href="data:text/html;charset=utf-8,%3Cdiv%3E%3Ch1%3EHello%2C%20World%21%3C%2Fh1%3E%3C%2Fdiv%3E" target="_blank">
+            made with this
+            </a>*/}
+              <a href="javascript:void(0);" onClick={openHtmlContent}>
+                  made with this
+              </a>
+
           </description>
         )}
         <Canvas
