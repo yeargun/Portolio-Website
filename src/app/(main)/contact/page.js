@@ -43,8 +43,8 @@ const Page = () => {
           />
         </h1>
         <p className={styles.description}>
-          As of now, I'm more focused on backend, system design and cloud native
-          applications but at the end of the day I'm interested in solving
+          As of now, I&apos;m more focused on backend, system design and cloud native
+          applications but at the end of the day I&apos;m interested in solving
           problems.
         </p>
         <div className={styles.contactForm}>
